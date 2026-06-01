@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Complete EOE MEUD101 revision material for CHARUSAT B.Tech: 20 MCQs with solutions, engineering drawing, mechanical & civil concepts, all formulas, and exam strategy in one guide.">
+<meta name="author" content="Anshika Badala">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EOE MEUD101 — Complete Revision Material</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --blue: #1a56db;
+    --blue-light: #e8f0fe;
+    --blue-dark: #0e3a9c;
+    --red: #c0392b;
+    --red-light: #fdecea;
+    --green: #27ae60;
+    --green-light: #eafaf1;
+    --amber: #d68910;
+    --amber-light: #fef9e7;
+    --purple: #6c3483;
+    --purple-light: #f4ecf7;
+    --gray: #636e72;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1a202c;
+    --text-muted: #718096;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* TOP BANNER */
+  .banner {
+    background: linear-gradient(135deg, #1a56db 0%, #0e3a9c 100%);
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  .banner h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .banner p { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+  .banner .pills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+  .pill { background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 500; }
+
+  /* TABS */
+  .tab-bar { background: white; border-bottom: 1px solid var(--border); padding: 0 1rem; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 0; z-index: 100; }
+  .tab-btn { padding: 12px 14px; font-size: 12.5px; font-weight: 500; color: var(--text-muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .15s; }
+  .tab-btn:hover { color: var(--blue); }
+  .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+  /* CONTENT */
+  .content { padding: 1rem; max-width: 900px; margin: 0 auto; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* UNIT LABEL */
+  .unit-label {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin: 1.2rem 0 0.5rem; padding-left: 2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .unit-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card-head {
+    padding: 13px 15px; cursor: pointer;
+    display: flex; align-items: flex-start; gap: 11px;
+    user-select: none; transition: background .12s;
+  }
+  .card-head:hover { background: #f7faff; }
+  .cnum {
+    width: 28px; height: 28px; border-radius: 50%;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .nb { background: var(--blue); color: white; }
+  .nr { background: var(--red); color: white; }
+  .ng { background: var(--green); color: white; }
+  .na { background: var(--amber); color: white; }
+  .np { background: var(--purple); color: white; }
+  .ci { flex: 1; }
+  .ci strong { font-size: 13.5px; font-weight: 600; color: var(--text); display: block; line-height: 1.4; }
+  .ci em { font-size: 12px; color: var(--text-muted); margin-top: 2px; display: block; font-style: normal; }
+  .tags { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .t-red { background: var(--red-light); color: var(--red); }
+  .t-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .t-green { background: var(--green-light); color: var(--green); }
+  .t-amber { background: var(--amber-light); color: var(--amber); }
+  .t-purple { background: var(--purple-light); color: var(--purple); }
+  .arrow { font-size: 14px; color: var(--text-muted); flex-shrink: 0; margin-left: auto; padding-top: 3px; transition: transform .2s; }
+  .card-body { display: none; padding: 0 15px 16px; border-top: 1px solid var(--border); }
+  .card-body.open { display: block; }
+
+  /* BODY CONTENT */
+  .body { font-size: 13.5px; color: #374151; line-height: 1.85; margin-top: 14px; }
+  .body b, .body strong { color: var(--text); font-weight: 600; }
+  .body ul, .body ol { padding-left: 1.3rem; margin: 8px 0; }
+  .body li { margin-bottom: 5px; }
+
+  /* CALLOUTS */
+  .hl { background: var(--blue-light); border-left: 3px solid var(--blue); padding: 10px 13px; border-radius: 0 8px 8px 0; margin: 10px 0; font-size: 13px; color: #0e3a9c; }
+  .warn { background: var(--amber-light); border-left: 3px solid var(--amber); padding: 10px 13px; border-radius: 0 8px 8px 0; margin: 10px 0; font-size: 13px; color: #7d4e00; }
+  .good { background: var(--green-light); border-left: 3px solid var(--green); padding: 10px 13px; border-radius: 0 8px 8px 0; margin: 10px 0; font-size: 13px; color: #145a32; }
+  .err { background: var(--red-light); border-left: 3px solid var(--red); padding: 10px 13px; border-radius: 0 8px 8px 0; margin: 10px 0; font-size: 13px; color: var(--red); }
+  .bx { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px; margin: 10px 0; font-size: 13px; font-family: 'JetBrains Mono', monospace; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; border-radius: 8px; overflow: hidden; }
+  th { background: #f1f5f9; color: #475569; font-weight: 600; padding: 8px 10px; border: 1px solid var(--border); text-align: left; }
+  td { padding: 8px 10px; border: 1px solid var(--border); color: #374151; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfc; }
+
+  /* MCQ OPTIONS */
+  .opt { background: #f8fafc; border: 1px solid var(--border); border-radius: 7px; padding: 7px 11px; margin: 4px 0; font-size: 13px; }
+  .opt.ok { background: var(--green-light); border-color: var(--green); color: #145a32; font-weight: 600; }
+
+  /* DIVIDER */
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+  /* FORMULA BOX */
+  .formula { background: linear-gradient(135deg, #1a56db08, #6c348308); border: 1px solid #c7d2fe; border-radius: 10px; padding: 14px; margin: 10px 0; }
+  .formula h4 { font-size: 12px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+  .formula p { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #1e3a8a; margin: 3px 0; }
+
+  /* PRINT */
+  @media print {
+    .tab-bar { display: none; }
+    .section { display: block !important; }
+    .card-body { display: block !important; }
+    .arrow { display: none; }
+    .banner { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .banner h1 { font-size: 18px; }
+    .content { padding: 0.75rem; }
+  }
+
+  /* FOOTER SECTION */
+  .site-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #e2e8f0;
+    padding: 3.5rem 1.5rem 2.5rem;
+    margin-top: 4rem;
+    border-top: 4px solid var(--blue);
+  }
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 260px;
+  }
+  .footer-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+  .footer-section h4 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+    color: #94a3b8;
+  }
+  .footer-section p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+  .footer-section .copyright {
+    margin-top: 1.5rem;
+    font-size: 12px;
+    color: #64748b;
+  }
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .social-link:hover {
+    color: white;
+    transform: translateX(4px);
+  }
+  .social-link .icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+  
+  @media (max-width: 600px) {
+    .site-footer {
+      padding: 2.5rem 1rem 2rem;
+      text-align: center;
+    }
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .social-links {
+      align-items: center;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1>📚 EOE Complete Revision — MEUD101</h1>
+  <p>CHARUSAT University · Second Semester B.Tech · All 12 Units Covered</p>
+  <div class="pills">
+    <span class="pill">50 Marks</span>
+    <span class="pill">135 Minutes</span>
+    <span class="pill">Part A: Drawing</span>
+    <span class="pill">Part B: Mechanical</span>
+    <span class="pill">Part C: Civil</span>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('mcqs')">🎯 20 MCQs</button>
+  <button class="tab-btn" onclick="showTab('drawing')">✏️ Engineering Drawing</button>
+  <button class="tab-btn" onclick="showTab('mech')">⚙️ Mechanical</button>
+  <button class="tab-btn" onclick="showTab('civil')">🏗️ Civil</button>
+  <button class="tab-btn" onclick="showTab('formulas')">🔢 All Formulas</button>
+  <button class="tab-btn" onclick="showTab('strategy')">⚡ Exam Strategy</button>
+</div>
+
+<div class="content">
+
+<!-- ═══════ MCQs ═══════ -->
+<div id="mcqs" class="section active">
+
+<div class="unit-label">Section I — 10 MCQs × 1 mark (from 2025 paper + 2026 predictions)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nr">Q</div>
+    <div class="ci"><strong>All 20 MCQs with Full Explanations</strong><em>2025 exact questions + predicted 2026 questions — read ALL</em><div class="tags"><span class="tag t-red">10 marks</span><span class="tag t-red">30 minutes</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+
+      <b>━━━ FROM 2025 PAPER (Confirmed) ━━━</b><br><br>
+
+      <b>Q1. When cutting plane is parallel to HP in section of solid:</b>
+      <div class="opt">A) AS &gt; TS</div><div class="opt ok">B) AS = TS ✓ — Cutting plane || HP → section falls directly on HP → no distortion → AS = TS</div><div class="opt">C) AS &lt; TS</div><div class="opt">D) None of these</div>
+      <div class="hl">Concept: AS = True Section ONLY when cutting plane is PARALLEL to the projection plane. If inclined → AS &lt; TS (appears compressed).</div>
+      <br>
+
+      <b>Q2. Scale 1:50, actual wall = 25 metres → drawing length:</b>
+      <div class="opt">A) 0.25 m</div><div class="opt ok">B) 0.50 m ✓ — 25 ÷ 50 = 0.5 m</div><div class="opt">C) 0.75 m</div><div class="opt">D) 0.50 cm (wrong unit!)</div>
+      <div class="hl">Formula: Drawing length = Actual ÷ Scale denominator. Always check units — 0.5m ≠ 0.5cm.</div>
+      <br>
+
+      <b>Q3. Which workspaces are used in Fusion 360:</b>
+      <div class="opt">A) Design</div><div class="opt">B) Render</div><div class="opt">C) Animation</div><div class="opt ok">D) All of the above ✓ — Design, Render, Animation, Drawing, Manufacture, Simulation are all workspaces</div><br>
+
+      <b>Q4. Which Fusion 360 command models a donut/ring shape:</b>
+      <div class="opt">A) Box</div><div class="opt">B) Sphere</div><div class="opt ok">C) Torus ✓ — Torus = ring/donut shape. Box=cube, Sphere=ball, Coil=spring</div><div class="opt">D) Coil</div><br>
+
+      <b>Q5. Two symmetrical planes in Fusion 360 — which command:</b>
+      <div class="opt">A) Extrude</div><div class="opt ok">B) Mirror ✓ — Mirror creates symmetrical copy about a plane (like mirror reflection)</div><div class="opt">C) Hole</div><div class="opt">D) None of the above</div><br>
+
+      <b>Q6. Identify part of VCR cycle (absorbs heat from food/room):</b>
+      <div class="opt">A) Absorber (wrong — Vapour Absorption system, not VCR)</div><div class="opt">B) Generator (wrong — Vapour Absorption system)</div><div class="opt ok">C) Compressor? No — Evaporator ✓ — EVAPORATOR absorbs heat from refrigerated space</div><div class="opt">D) None</div>
+      <div class="warn">VCR parts: Compressor → Condenser → Expansion Valve → Evaporator. Absorber/Generator = Vapour Absorption system (different!)</div><br>
+
+      <b>Q7. Roominess L:W ratio:</b>
+      <div class="opt ok">A) 1.2:1 to 1.5:1 ✓ — Maximum usable area with minimum dimensions. Beyond 2:1 = tunnel effect</div><div class="opt">B) 1:1 (square wastes corners)</div><div class="opt">C) 3:1 (tunnel effect)</div><div class="opt">D) Minimizing length-to-width ratio (wrong)</div><br>
+
+      <b>Q8. "Estimating and Costing" falls under which Civil Engg category:</b>
+      <div class="opt">A) Structural Analysis</div><div class="opt">B) Surveying</div><div class="opt">C) Construction Management</div><div class="opt ok">D) Professional Practice ✓ — Estimating (predicting costs) + Costing (actual tracking) = Professional Practice</div><br>
+
+      <b>Q9. Which is NOT a branch of Civil Engineering:</b>
+      <div class="opt">A) Structural Engineering</div><div class="opt ok">B) Thermal Engineering ✓ — Belongs to MECHANICAL Engineering (heat, engines, thermodynamics)</div><div class="opt">C) Transportation Engineering</div><div class="opt">D) Environmental Engineering</div><br>
+
+      <b>Q10. Invar tape material composition:</b>
+      <div class="opt">A) Linen or cotton</div><div class="opt">B) Steel ribbon coated with varnish</div><div class="opt ok">C) Alloy of Nickel (36%) and Steel (64%) ✓ — Very low thermal expansion = accurate surveying</div><div class="opt">D) Fibre glass</div>
+
+      <hr class="div">
+      <b>━━━ PREDICTED FOR 2026 (Study these!) ━━━</b><br><br>
+
+      <b>Q11. First Law of Thermodynamics states:</b>
+      <div class="opt ok">A) Energy cannot be created or destroyed, only converted ✓ — Q = W + ΔU</div><div class="opt">B) Heat flows hot to cold</div><div class="opt">C) Volume ∝ Temperature</div><div class="opt">D) PV = constant</div><br>
+
+      <b>Q12. Compression ratio of CI (Diesel) engine:</b>
+      <div class="opt">A) 4:1 to 8:1</div><div class="opt">B) 6:1 to 12:1 (SI engine range)</div><div class="opt ok">C) 14:1 to 22:1 ✓ — High ratio needed to heat air to 600°C for self-ignition of diesel</div><div class="opt">D) 25:1 to 30:1</div><br>
+
+      <b>Q13. In First Angle Projection, Top View is placed:</b>
+      <div class="opt">A) Above Front View (Third Angle!)</div><div class="opt ok">B) Below Front View ✓ — In 1st angle, object between observer and plane. Shadow falls below → Top View goes below FV</div><div class="opt">C) Right of Front View</div><div class="opt">D) Left of Front View</div><br>
+
+      <b>Q14. Isometric scale factor is:</b>
+      <div class="opt">A) 1.0 (Isometric VIEW — uses actual lengths)</div><div class="opt">B) 0.707 (= cos45°)</div><div class="opt ok">C) 0.816 ✓ — = cos45°/cos30° = 0.7071/0.8660 = 0.816 (for true isometric PROJECTION)</div><div class="opt">D) 0.5</div><br>
+
+      <b>Q15. 1 Tonne of Refrigeration equals:</b>
+      <div class="opt">A) 1 kW</div><div class="opt">B) 7 kW</div><div class="opt ok">C) 3.5 kW ✓ — 1 TR = heat to melt 1000kg ice in 24hrs = 3.5 kW = 210 kJ/min</div><div class="opt">D) 10 kW</div><br>
+
+      <b>Q16. Maximum floors for Load Bearing Structure:</b>
+      <div class="opt ok">A) 2–3 floors ✓ — Walls carry loads, become very thick on lower floors as height increases</div><div class="opt">B) 5–6 floors</div><div class="opt">C) 10+ floors</div><div class="opt">D) No limit</div><br>
+
+      <b>Q17. Eccentricity of a parabola is:</b>
+      <div class="opt">A) 0 (circle)</div><div class="opt">B) &lt; 1 (ellipse)</div><div class="opt ok">C) Exactly 1 ✓ — Parabola: e=1. Circle: e=0. Ellipse: 0&lt;e&lt;1. Hyperbola: e&gt;1</div><div class="opt">D) &gt; 1 (hyperbola)</div><br>
+
+      <b>Q18. BIS stands for:</b>
+      <div class="opt">A) British International Standards</div><div class="opt ok">B) Bureau of Indian Standards ✓ — Sets SP:46 code for engineering drawing in India. India uses 1st angle projection.</div><div class="opt">C) Board of Industrial Standards</div><div class="opt">D) Bureau of ISO Standards</div><br>
+
+      <b>Q19. Minimum window area per principle of Sanitation:</b>
+      <div class="opt ok">A) 1/7th of floor area ✓ — Hot-humid climate. In dry climate: 1/10th. Cross-ventilation = windows on opposite walls.</div><div class="opt">B) 1/3rd of floor area</div><div class="opt">C) 1/10th (dry climate rule)</div><div class="opt">D) Equal to floor area</div><br>
+
+      <b>Q20. Which surveying treats Earth's surface as flat:</b>
+      <div class="opt ok">A) Plane Surveying ✓ — Used for areas &lt;250 sq km. Ignores Earth's curvature. Most common for engineering.</div><div class="opt">B) Geodetic Surveying (large areas, considers curvature)</div><div class="opt">C) Topographic Surveying</div><div class="opt">D) Photogrammetric Surveying</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════ DRAWING ═══════ -->
+<div id="drawing" class="section">
+
+<div class="unit-label">Unit 1 — Fundamentals of Engineering Drawing (11%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">1.1</div>
+    <div class="ci"><strong>Engineering Drawing Basics — BIS, ISO, Instruments, Line Types</strong><em>Everything from Unit 1</em><div class="tags"><span class="tag t-blue">Theory</span><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Why Engineering Drawing?</b> It's the universal language of engineers — communicates exact shape, size, and position of every part. A drawing made in Gujarat can be manufactured in Japan because both follow the same standards.<br><br>
+      <b>BIS = Bureau of Indian Standards</b> (formerly ISI). Code SP:46 governs engineering drawing in India. India follows FIRST ANGLE projection.<br>
+      <b>ISO = International Organization for Standardization</b> — global body ensuring compatibility worldwide.<br><br>
+      <b>Types of Lines (SP 46-1988):</b>
+      <table>
+        <tr><th>Line</th><th>Appearance</th><th>Use</th></tr>
+        <tr><td><b>Visible/Object</b></td><td>Thick continuous ——</td><td>Visible edges and outlines</td></tr>
+        <tr><td><b>Hidden</b></td><td>Medium dashes - - - -</td><td>Invisible (behind/inside) edges</td></tr>
+        <tr><td><b>Centre</b></td><td>Thin long-short -·-·-</td><td>Axis of symmetry, hole centres</td></tr>
+        <tr><td><b>Dimension</b></td><td>Thin with arrowheads ↔</td><td>Shows measurements</td></tr>
+        <tr><td><b>Extension</b></td><td>Thin continuous</td><td>Extends from object to dimension</td></tr>
+        <tr><td><b>Hatching/Section</b></td><td>Thin, 45°, equally spaced</td><td>Cut material in section views</td></tr>
+        <tr><td><b>Cutting plane</b></td><td>Thick chain with arrows</td><td>Shows where object is cut</td></tr>
+        <tr><td><b>Leader</b></td><td>Thin with arrow/dot</td><td>Notes pointing to feature</td></tr>
+      </table>
+      <b>Paper Sizes (A-series):</b> A0 (841×1189mm) → A1 (594×841) → A2 (420×594) → A3 (297×420) → <b>A4 (210×297mm)</b>. Each is half the previous. A4 is most common.
+      <div class="hl">MCQ: BIS = Bureau of Indian Standards. SP:46 = drawing standard. First angle = India. Hidden lines = dashes. Centre lines = chain (long-short). Hatching = 45° thin.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">1.3</div>
+    <div class="ci"><strong>Engineering Scale — Types, RF, Calculations</strong><em>Scale formula + Plain vs Diagonal scale</em><div class="tags"><span class="tag t-red">MCQ 2025</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Type</th><th>Representative Fraction</th><th>Used for</th></tr>
+        <tr><td>Full scale</td><td>1:1 (RF = 1)</td><td>Small machine parts</td></tr>
+        <tr><td><b>Reducing scale</b></td><td>1:2, 1:10, 1:50, 1:100</td><td>Buildings, maps, roads</td></tr>
+        <tr><td><b>Enlarging scale</b></td><td>2:1, 5:1, 10:1</td><td>Watch parts, micro chips</td></tr>
+      </table>
+      <div class="formula">
+        <h4>Formula</h4>
+        <p>Drawing length = Actual length ÷ Scale denominator</p>
+        <p>RF = Drawing length / Actual length (SAME UNITS)</p>
+        <p>Example: Actual = 25m, Scale = 1:50 → Drawing = 25÷50 = 0.5m</p>
+      </div>
+      <b>Plain Scale</b> = Line divided into equal parts, reads TWO units (km + m).<br>
+      <b>Diagonal Scale</b> = Uses diagonal lines to read THREE units (km + m + dm). Based on similar triangles.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">1.4</div>
+    <div class="ci"><strong>Engineering Curves — Conics + Cycloid + Involute + Spiral + Helix</strong><em>"How to get triangle, circle, ellipse from a cone" — 5 marks</em><div class="tags"><span class="tag t-red">5 marks 2025</span><span class="tag t-red">Very likely 2026</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>CONIC SECTIONS — cutting a cone at different angles:</b>
+      <table>
+        <tr><th>Curve</th><th>Cutting plane condition</th><th>Eccentricity e</th><th>Use</th></tr>
+        <tr><td><b>Triangle</b></td><td>Plane passes through APEX</td><td>—</td><td>—</td></tr>
+        <tr><td><b>Circle</b></td><td>Plane ⊥ to axis (horizontal)</td><td>e = 0</td><td>Wheels, pipes</td></tr>
+        <tr><td><b>Ellipse</b></td><td>α &gt; θ (steeper than generator)</td><td>0 &lt; e &lt; 1</td><td>Planetary orbits, elliptical gears</td></tr>
+        <tr><td><b>Parabola</b></td><td>α = θ (parallel to one generator)</td><td>e = 1</td><td>Satellite dish, headlights, cable bridges</td></tr>
+        <tr><td><b>Hyperbola</b></td><td>α &lt; θ (parallel to axis)</td><td>e &gt; 1</td><td>Cooling towers, nuclear plants</td></tr>
+      </table>
+      <div class="good">Memory trick: α vs θ → E for Exceeds (Ellipse, α&gt;θ), P for Perfect equal (Parabola, α=θ), H for Has less (Hyperbola, α&lt;θ)</div>
+      <b>Other Engineering Curves:</b>
+      <ul>
+        <li><b>Cycloid:</b> Point on circle rolling on a STRAIGHT LINE. Used in gear teeth.</li>
+        <li><b>Epicycloid:</b> Point on circle rolling OUTSIDE another circle.</li>
+        <li><b>Hypocycloid:</b> Point on circle rolling INSIDE another circle.</li>
+        <li><b>Involute:</b> End of thread being UNWOUND from a circle/polygon. Used in gear tooth profiles (most common gear type).</li>
+        <li><b>Archimedean Spiral:</b> Point moving away from centre at uniform rate while rotating uniformly. Equal distance between turns. Used in watch springs, scroll compressors.</li>
+        <li><b>Helix:</b> Point on surface of cylinder rotating + moving axially. Like a screw thread or spring. Used in bolts, springs, helical gears.</li>
+      </ul>
+
+      <b>Ellipse by Concentric Circle Method (5 marks):</b>
+      <ol>
+        <li>Draw centre O. Mark major axis AB = 100mm, minor axis CD = 60mm (assume these if not given).</li>
+        <li>Draw two concentric circles: outer (radius = 50mm = semi-major), inner (radius = 30mm = semi-minor).</li>
+        <li>Divide BOTH circles into 12 equal parts (30° each). Draw all 12 radii through both circles.</li>
+        <li>At each point on OUTER circle → draw VERTICAL line (parallel to minor axis CD).</li>
+        <li>At corresponding point on INNER circle → draw HORIZONTAL line (parallel to major axis AB).</li>
+        <li>Intersection of these two lines = one point on ellipse. Mark all 12 points.</li>
+        <li>Join all points + A, B, C, D smoothly = ELLIPSE.</li>
+      </ol>
+      <div class="hl">A, B, C, D lie directly on the ellipse. Draw construction lines light (H pencil), final curve dark (HB pencil). Always state assumed dimensions.</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 2 — Projections & Section of Solid (11%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">2.2</div>
+    <div class="ci"><strong>Sectional Views — All Types + Hatching Rules</strong><em>Full section, half section, offset — when to use each</em><div class="tags"><span class="tag t-red">MCQ 2025</span><span class="tag t-blue">Theory</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Why sectional views?</b> When an object has internal features (holes, cavities), hidden lines make drawings confusing. Section view cuts object open to show inside clearly.<br><br>
+      <table>
+        <tr><th>Type</th><th>What it does</th><th>When to use</th></tr>
+        <tr><td><b>Full Section</b></td><td>Cuts entirely through object, shows full cross-section</td><td>When internal features are complex</td></tr>
+        <tr><td><b>Half Section</b></td><td>Cuts only 1/4 of object (one quadrant removed)</td><td>Symmetrical objects — shows inside + outside</td></tr>
+        <tr><td><b>Offset Section</b></td><td>Cutting plane is STEPPED to pass through different features</td><td>Features not in one straight line</td></tr>
+        <tr><td><b>Revolved Section</b></td><td>Cross-section rotated 90° IN PLACE on the view</td><td>Ribs, spokes, arms</td></tr>
+        <tr><td><b>Removed Section</b></td><td>Like revolved but drawn OUTSIDE the view</td><td>When revolved is too crowded</td></tr>
+        <tr><td><b>Partial (Broken-out)</b></td><td>Only small portion cut open, freehand break line</td><td>Only one small feature needs showing</td></tr>
+      </table>
+      <b>Hatching rules:</b> Thin lines at 45°, equally spaced (2–5mm). Adjacent parts = opposite direction or different spacing. Do NOT hatch: bolts, nuts, shafts, solid ribs/webs (they are not sectioned even when cut).
+      <div class="hl">MCQ: CP parallel to HP → AS = TS. Half section = symmetrical objects. Hidden lines NOT shown in section views (internal now visible). Hatching = 45° thin equally spaced lines.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">2.3</div>
+    <div class="ci"><strong>Classification of Solids — Polyhedra + Solids of Revolution</strong><em>"Classify solids with sketches" — 5 marks</em><div class="tags"><span class="tag t-red">5 marks 2025</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>TYPE 1: POLYHEDRA</b> — bounded by FLAT (plane) surfaces<br><br>
+      <b>a) Regular Polyhedra:</b> All faces identical regular polygons.
+      <ul>
+        <li>Tetrahedron = 4 equilateral triangles</li>
+        <li>Cube (Hexahedron) = 6 squares</li>
+        <li>Octahedron = 8 equilateral triangles</li>
+      </ul>
+      <b>b) Prisms:</b> Two equal parallel polygonal bases + rectangular lateral faces. Named by base: Triangular prism, Square prism (cuboid), Pentagonal prism, Hexagonal prism.<br><br>
+      <b>c) Pyramids:</b> One polygonal base + triangular faces meeting at APEX. Named by base: Square pyramid, Triangular pyramid, Hexagonal pyramid. Frustum = top cut off.<br><br>
+      <b>TYPE 2: SOLIDS OF REVOLUTION</b> — generated by rotating 2D shape around axis
+      <table>
+        <tr><th>Solid</th><th>Rotate this shape</th><th>Properties</th></tr>
+        <tr><td><b>Cylinder</b></td><td>Rectangle around its longer side</td><td>2 circular bases + curved surface</td></tr>
+        <tr><td><b>Cone</b></td><td>Right-angled triangle around vertical leg</td><td>1 circular base + apex + curved surface</td></tr>
+        <tr><td><b>Sphere</b></td><td>Semicircle around its diameter</td><td>No flat faces, all points equidistant from centre</td></tr>
+        <tr><td><b>Torus</b></td><td>Circle around external axis</td><td>Donut/ring shape</td></tr>
+      </table>
+      <div class="hl">Prism: 2 bases. Pyramid: 1 base + apex. Top view of prism = base polygon shape. Front view of pyramid = isosceles triangle.</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 3 & 4 — Orthographic + Isometric Projection (22%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">3.2</div>
+    <div class="ci"><strong>First Angle vs Third Angle Projection</strong><em>View positions, symbols, which India uses</em><div class="tags"><span class="tag t-red">5 marks</span><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Orthographic Projection</b> = Drawing 2D views of a 3D object from different directions. All projectors are parallel and perpendicular to projection plane.<br><br>
+      <b>3 Principal Planes:</b> HP (horizontal — top view), VP (vertical — front view), PP (profile — side view).<br><br>
+      <table>
+        <tr><th>Feature</th><th>FIRST ANGLE (India/Europe)</th><th>THIRD ANGLE (USA)</th></tr>
+        <tr><td>Object position</td><td>1st quadrant: between observer and plane</td><td>3rd quadrant: plane between observer and object</td></tr>
+        <tr><td>Top View (TV)</td><td><b>BELOW</b> Front View</td><td><b>ABOVE</b> Front View</td></tr>
+        <tr><td>Bottom View</td><td>Above FV</td><td>Below FV</td></tr>
+        <tr><td>Left Hand Side View</td><td>On RIGHT side of FV</td><td>On LEFT side of FV</td></tr>
+        <tr><td>Right Hand Side View</td><td>On LEFT side of FV</td><td>On RIGHT side of FV</td></tr>
+        <tr><td>Standard</td><td>BIS SP:46, ISO</td><td>ANSI (USA)</td></tr>
+        <tr><td>Symbol</td><td>Truncated cone, WIDE end toward eye</td><td>Truncated cone, NARROW end toward eye</td></tr>
+      </table>
+      <div class="warn">In 1st angle: LHSV (view from LEFT) appears on RIGHT side of drawing. This seems backwards but is correct. In 1st angle, the projection goes to the OPPOSITE side.</div>
+      <div class="good">Memory: India uses FIRST angle. Top view goes BELOW FV (like a shadow falling below). The view goes to the opposite side of where you're looking from.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">4.1</div>
+    <div class="ci"><strong>Isometric Projection — Terminology, Scale, How to Draw</strong><em>Isometric axes, lines, box method</em><div class="tags"><span class="tag t-red">5 marks</span><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Isometric Projection</b> = Single view showing 3 dimensions (L, W, H) simultaneously. All 3 axes equally inclined to picture plane.<br><br>
+      <b>Key Terms:</b>
+      <ul>
+        <li><b>Isometric Axes:</b> One vertical + two at 30° to horizontal. THREE AXES AT 120° TO EACH OTHER.</li>
+        <li><b>Isometric Lines:</b> Lines parallel to any isometric axis. Can be measured directly.</li>
+        <li><b>Non-Isometric Lines:</b> NOT parallel to any axis (inclined surfaces). Cannot measure directly.</li>
+      </ul>
+      <div class="formula">
+        <h4>Isometric Scale</h4>
+        <p>Isometric scale factor = cos45° / cos30° = 0.7071 / 0.8660 = 0.816</p>
+        <p>Isometric VIEW (exam) = use ACTUAL dimensions directly</p>
+        <p>Isometric PROJECTION = multiply by 0.816</p>
+      </div>
+      <b>Box Method to draw isometric view from FV + TV:</b>
+      <ol>
+        <li>Find overall L × W × H from FV and TV</li>
+        <li>Draw isometric axes (1 vertical, 2 at 30°)</li>
+        <li>Draw overall bounding isometric box</li>
+        <li>Mark all features on box faces by transferring dimensions</li>
+        <li>Cut away parts that don't belong</li>
+        <li>Draw visible edges dark. NO hidden lines in isometric.</li>
+        <li>Erase all construction lines</li>
+      </ol>
+      <div class="warn">Circles in isometric = ELLIPSES. Draw them using the 4-centre oval method. Never draw actual circles in isometric views.</div>
+
+      <b>Unit 5 — Fusion 360 / Computer Graphics (6%):</b><br>
+      CAD = Computer Aided Design. Faster, accurate, easy modification, 3D visualization, automatic dimensions.<br>
+      Workspaces: Design, Render, Animation, Drawing, Manufacture, Simulation.<br>
+      Key commands: Torus (ring), Mirror (symmetry), Extrude (2D→3D), Revolve (round shapes), Hole (circular hole), Fillet (round edges), Chamfer (cut edges).
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════ MECHANICAL ═══════ -->
+<div id="mech" class="section">
+
+<div class="unit-label">Unit 6 — Introduction to Mechanical Engineering (4%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">6.2</div>
+    <div class="ci"><strong>All Thermodynamic Terms Defined</strong><em>Force, pressure, work, power, energy, heat, temperature, enthalpy, entropy, efficiency</em><div class="tags"><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Term</th><th>Definition</th><th>Unit</th><th>Formula</th></tr>
+        <tr><td><b>Force</b></td><td>Any influence changing state of rest/motion</td><td>Newton (N)</td><td>F = m×a</td></tr>
+        <tr><td><b>Pressure</b></td><td>Force per unit area</td><td>Pascal (Pa) = N/m²</td><td>P = F/A</td></tr>
+        <tr><td><b>Work</b></td><td>Force × distance in direction of force</td><td>Joule (J)</td><td>W = F×d</td></tr>
+        <tr><td><b>Power</b></td><td>Rate of doing work</td><td>Watt (W), kW, HP</td><td>P = W/t. 1HP = 746W</td></tr>
+        <tr><td><b>Energy</b></td><td>Capacity to do work</td><td>Joule (J)</td><td>KE=½mv², PE=mgh</td></tr>
+        <tr><td><b>Heat</b></td><td>Energy transferred due to temperature difference</td><td>kJ, kcal</td><td>Q = mcΔT. 1kcal = 4.187kJ</td></tr>
+        <tr><td><b>Temperature</b></td><td>Measure of hotness/coldness</td><td>°C, °F, K</td><td>K = °C + 273</td></tr>
+        <tr><td><b>Enthalpy</b></td><td>Total heat content of system at constant pressure</td><td>kJ, kJ/kg</td><td>H = U + PV</td></tr>
+        <tr><td><b>Entropy</b></td><td>Measure of disorder/randomness</td><td>kJ/K</td><td>dS = dQ/T</td></tr>
+        <tr><td><b>Efficiency</b></td><td>Ratio of useful output to input</td><td>%, fraction</td><td>η = Output/Input × 100%</td></tr>
+        <tr><td><b>Cp</b></td><td>Specific heat at CONSTANT PRESSURE</td><td>kJ/kg·K</td><td>Air: Cp = 1.005 kJ/kg·K</td></tr>
+        <tr><td><b>Cv</b></td><td>Specific heat at CONSTANT VOLUME</td><td>kJ/kg·K</td><td>Air: Cv = 0.718 kJ/kg·K</td></tr>
+      </table>
+      <div class="hl">Cp - Cv = R (gas constant). γ = Cp/Cv = 1.4 for air. 1HP = 746W. K = °C + 273. °F = 1.8×°C + 32.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">6.3</div>
+    <div class="ci"><strong>ALL Gas Laws — Zeroth, First, Boyle's, Charles's, Combined</strong><em>Statements + formulas + examples</em><div class="tags"><span class="tag t-red">2 marks 2025</span><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>ZEROTH LAW:</b> "If A is in thermal equilibrium with C, and B is in thermal equilibrium with C, then A and B are in thermal equilibrium." → Basis of thermometry. Allows temperature measurement.<br><br>
+      <b>FIRST LAW OF THERMODYNAMICS:</b> "Energy cannot be created or destroyed — only converted from one form to another."
+      <div class="formula"><h4>First Law</h4><p>Q = W + ΔU</p><p>Q = heat added, W = work done, ΔU = change in internal energy</p></div>
+      <b>BOYLE'S LAW (constant T):</b> Volume ∝ 1/Pressure — doubling pressure halves volume.
+      <div class="formula"><h4>Boyle's Law</h4><p>P₁V₁ = P₂V₂ (temperature constant)</p></div>
+      <b>CHARLES'S LAW (constant P):</b> Volume ∝ Temperature — heating gas expands it.
+      <div class="formula"><h4>Charles's Law</h4><p>V₁/T₁ = V₂/T₂ (pressure constant) — T MUST be in KELVIN</p><p>Example: V₁=2m³, T₁=300K, T₂=600K → V₂ = 2×600/300 = 4m³</p></div>
+      <b>COMBINED GAS LAW:</b>
+      <div class="formula"><h4>Combined</h4><p>P₁V₁/T₁ = P₂V₂/T₂</p></div>
+      <b>CHARACTERISTIC EQUATION (Perfect Gas):</b>
+      <div class="formula"><h4>Perfect Gas</h4><p>PV = mRT</p><p>P=pressure(Pa), V=volume(m³), m=mass(kg), R=gas constant(J/kg·K), T=Kelvin</p><p>For Air: R = 0.287 kJ/kg·K</p></div>
+      <div class="hl">Exam: "State Charles's Law" = write statement + V₁/T₁ = V₂/T₂ + example = 2 marks. Always specify T in Kelvin — most common mistake.</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 7 — Steam and Steam Generator (7%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">7.1</div>
+    <div class="ci"><strong>Steam Formation — All Types + All Terms</strong><em>From water to superheated steam</em><div class="tags"><span class="tag t-blue">Theory</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      Heating 1 kg of water at 0°C at constant pressure of 1 atm:<br><br>
+      <table>
+        <tr><th>Stage</th><th>What happens</th><th>Temperature</th><th>Key term</th></tr>
+        <tr><td>Water heating</td><td>Temp rises 0→100°C, no state change</td><td>Rises to 100°C</td><td>Sensible heat = hf</td></tr>
+        <tr><td>Evaporation (wet steam)</td><td>Water → steam gradually, MIXTURE</td><td>STAYS at 100°C</td><td>Latent heat = hfg, Dryness fraction x: 0→1</td></tr>
+        <tr><td>Dry saturated steam</td><td>All water converted, x = 1 exactly</td><td>100°C (Tsat)</td><td>hg = hf + hfg</td></tr>
+        <tr><td>Superheated steam</td><td>Temp rises ABOVE 100°C, behaves like gas</td><td>&gt; 100°C</td><td>Degree of superheat = Tsup - Tsat</td></tr>
+      </table>
+      <div class="formula">
+        <h4>Steam Formulas</h4>
+        <p>Dryness fraction x = mass of dry steam / total mass of wet steam</p>
+        <p>x = 0 → saturated water | x = 1 → dry saturated steam</p>
+        <p>Enthalpy of wet steam: h = hf + x·hfg</p>
+        <p>Enthalpy of dry saturated steam: hg = hf + hfg</p>
+      </div>
+      <div class="hl">Higher pressure → higher saturation temperature. At 10 bar, water boils at ~180°C, not 100°C. Superheated steam used in turbines (obeys gas laws, more energy, no water droplets).</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">7.3</div>
+    <div class="ci"><strong>Boiler Classification — All 7 Criteria + Cochran Boiler</strong><em>"Classify boilers in detail" — 3 marks 2025</em><div class="tags"><span class="tag t-red">3 marks 2025</span><span class="tag t-red">Must know</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Boiler</b> = Closed vessel converting water to steam by burning fuel. Steam used for power generation or industrial processes.<br><br>
+      <table>
+        <tr><th>Basis</th><th>Type A</th><th>Type B</th><th>Examples</th></tr>
+        <tr><td>Orientation</td><td>Vertical</td><td>Horizontal</td><td>V: Cochran | H: Lancashire</td></tr>
+        <tr><td>Gas/water position</td><td>Fire-tube (gas in tubes)</td><td>Water-tube (water in tubes)</td><td>FT: Cochran, Lancashire | WT: Babcock & Wilcox</td></tr>
+        <tr><td>Furnace position</td><td>Internally fired</td><td>Externally fired</td><td>Int: Cochran | Ext: B&W</td></tr>
+        <tr><td>Water circulation</td><td>Natural</td><td>Forced (pump)</td><td>Nat: Lancashire | Forced: Benson, La-Mont</td></tr>
+        <tr><td>Working pressure</td><td>Low (&lt;10 bar)</td><td>High (&gt;25 bar)</td><td>Low: Cochran | High: B&W</td></tr>
+        <tr><td>Mobility</td><td>Stationary</td><td>Mobile/Portable</td><td>Stat: Lancashire | Mobile: Locomotive</td></tr>
+        <tr><td>No. of tubes</td><td>Single tube</td><td>Multi-tube</td><td>Single: Cornish | Multi: Cochran, Lancashire</td></tr>
+      </table>
+      <div class="bx"><b>Cochran Boiler (Favourite exam topic):</b>
+Type: Vertical, Multi-tube, Fire-tube, Internally fired, Natural circulation, Low-medium pressure
+Shell: 2.75m diameter × 5.75m height
+Pressure: 6.5 bar normal, max 15 bar | Steam: 3500 kg/hr | Efficiency: 70–75%
+Working: Fuel burns in furnace → hot gases through fire tubes → heat water → steam in dome → out through stop valve</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 8 — Internal Combustion Engines (7%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">8.3</div>
+    <div class="ci"><strong>ALL Engine Comparisons — IC vs EC, SI vs CI, 2-stroke vs 4-stroke</strong><em>Three 4-mark comparisons — know all three</em><div class="tags"><span class="tag t-red">4 marks 2025 ×2</span><span class="tag t-red">Very likely again</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>COMPARISON 1: IC Engine vs EC Engine</b>
+      <table>
+        <tr><th>Parameter</th><th>IC Engine</th><th>EC Engine</th></tr>
+        <tr><td>Combustion</td><td>INSIDE cylinder</td><td>OUTSIDE in furnace/boiler</td></tr>
+        <tr><td>Working fluid</td><td>Fuel+air mixture (petrol/diesel)</td><td>Separate fluid (steam/hot gas)</td></tr>
+        <tr><td>Space required</td><td>Less — compact</td><td>More — needs separate boiler</td></tr>
+        <tr><td>Thermal efficiency</td><td>Higher (20–40%)</td><td>Lower (10–20%)</td></tr>
+        <tr><td>Fuel cost</td><td>Higher (liquid fuels only)</td><td>Lower (coal, wood, any fuel)</td></tr>
+        <tr><td>Starting time</td><td>Immediate</td><td>Long (must build steam pressure)</td></tr>
+        <tr><td>Examples</td><td>Car, bike, generator</td><td>Steam turbine, steam engine</td></tr>
+      </table>
+      <hr class="div">
+      <b>COMPARISON 2: SI Engine vs CI Engine</b>
+      <table>
+        <tr><th>Parameter</th><th>SI Engine (Petrol)</th><th>CI Engine (Diesel)</th></tr>
+        <tr><td>Working cycle</td><td>Otto cycle</td><td>Diesel cycle</td></tr>
+        <tr><td>Ignition method</td><td>Spark plug (electric spark)</td><td>Self-ignition by compression</td></tr>
+        <tr><td>Fuel</td><td>Petrol/Gasoline</td><td>Diesel (HSD)</td></tr>
+        <tr><td>Compression ratio</td><td>6:1 to 12:1 (LOW)</td><td>14:1 to 22:1 (HIGH)</td></tr>
+        <tr><td>Thermal efficiency</td><td>25–30% (lower)</td><td>35–40% (higher)</td></tr>
+        <tr><td>Running cost</td><td>Higher (petrol costly)</td><td>Lower (diesel cheaper)</td></tr>
+        <tr><td>Weight</td><td>Light</td><td>Heavy</td></tr>
+        <tr><td>Noise</td><td>Less noisy</td><td>More noisy</td></tr>
+        <tr><td>Applications</td><td>Cars, bikes, scooters</td><td>Trucks, buses, tractors, ships</td></tr>
+      </table>
+      <hr class="div">
+      <b>COMPARISON 3: 2-Stroke vs 4-Stroke Engine</b>
+      <table>
+        <tr><th>Parameter</th><th>2-Stroke</th><th>4-Stroke</th></tr>
+        <tr><td>Power strokes per revolution</td><td>1 per revolution</td><td>1 per 2 revolutions</td></tr>
+        <tr><td>Valves</td><td>No valves (ports)</td><td>Inlet + exhaust valves</td></tr>
+        <tr><td>Power per cc</td><td>More (theoretically)</td><td>Less</td></tr>
+        <tr><td>Fuel efficiency</td><td>Poor (fuel may escape)</td><td>Good</td></tr>
+        <tr><td>Pollution</td><td>More</td><td>Less</td></tr>
+        <tr><td>Weight/Size</td><td>Light, simple</td><td>Heavy, complex</td></tr>
+        <tr><td>Applications</td><td>Old scooters, chainsaws, lawn mowers</td><td>Cars, modern bikes, trucks</td></tr>
+      </table>
+      <div class="hl">Why CI needs high compression: Air must reach ~600°C for diesel to self-ignite. SI can't have high compression — petrol ignites early (knocking). That's why petrol engines need spark plugs.</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 9 — Refrigeration & Air Conditioning (7%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">9.1</div>
+    <div class="ci"><strong>Refrigerant + COP + Refrigerating Effect + VCR Cycle</strong><em>3 definitions + VCR working — 3 marks + MCQ 2025</em><div class="tags"><span class="tag t-red">3 marks 2025</span><span class="tag t-red">MCQ 2025</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>1. REFRIGERANT:</b> Heat-carrying working fluid circulating through refrigeration system. Absorbs heat from refrigerated space (in evaporator), rejects it to surroundings (in condenser). Properties: non-toxic, non-flammable, high latent heat, low cost. Examples: R-12, R-22, R-134a, NH₃ (Ammonia).<br><br>
+      <b>2. COEFFICIENT OF PERFORMANCE (COP):</b>
+      <div class="formula">
+        <h4>COP Formula</h4>
+        <p>COP = Refrigerating Effect / Work Input = Q₂ / W = Q₂ / (Q₁ - Q₂)</p>
+        <p>Carnot COP (ideal) = T₂ / (T₁ - T₂) [T in Kelvin]</p>
+        <p>Higher COP = more efficient (cools more with less electricity)</p>
+      </div>
+      <b>3. REFRIGERATING EFFECT:</b> Total heat absorbed from refrigerated space per kg of refrigerant during one cycle. Happens in EVAPORATOR. Unit: kJ/kg or kJ/min. Also called "cooling effect." 1 TR = 3.5 kW = 210 kJ/min.<br><br>
+      <hr class="div">
+      <b>VCR CYCLE — 4 components in order:</b>
+      <table>
+        <tr><th>Component</th><th>Inlet state</th><th>What it does</th><th>Outlet state</th></tr>
+        <tr><td><b>1. Compressor</b></td><td>Low P, Low T vapour</td><td>Compresses refrigerant (uses electricity)</td><td>High P, High T vapour</td></tr>
+        <tr><td><b>2. Condenser</b></td><td>High P, High T vapour</td><td>Rejects heat to atmosphere → condenses</td><td>High P, High T liquid</td></tr>
+        <tr><td><b>3. Expansion valve</b></td><td>High P, High T liquid</td><td>Drops pressure and temperature suddenly</td><td>Low P, Low T liquid+vapour</td></tr>
+        <tr><td><b>4. Evaporator</b></td><td>Low P, Low T mix</td><td>ABSORBS heat from food/room → evaporates</td><td>Low P, Low T vapour</td></tr>
+      </table>
+      <div class="warn">COOLING happens in EVAPORATOR (not compressor). Absorber and Generator = Vapour ABSORPTION system ≠ VCR. Window AC = single unit. Split AC = indoor + outdoor separate units, quieter.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════ CIVIL ═══════ -->
+<div id="civil" class="section">
+
+<div class="unit-label">Unit 10 — Scope of Civil Engineering (5%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">10</div>
+    <div class="ci"><strong>Branches of Civil Engg + Scope + Role of Civil Engineer</strong><em>Structural, Transportation, Environmental... NOT Thermal</em><div class="tags"><span class="tag t-red">MCQ 2025</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Civil Engineering</b> = Design, construction, and maintenance of physical infrastructure.<br><br>
+      <table>
+        <tr><th>Branch</th><th>Deals with</th></tr>
+        <tr><td>Structural Engineering</td><td>Buildings, bridges, dams — load-bearing design</td></tr>
+        <tr><td>Transportation Engineering</td><td>Roads, highways, railways, airports, traffic</td></tr>
+        <tr><td>Environmental Engineering</td><td>Water treatment, sewage, pollution, solid waste</td></tr>
+        <tr><td>Geotechnical Engineering</td><td>Soil testing, foundation, tunnels, slopes</td></tr>
+        <tr><td>Water Resources Engineering</td><td>Dams, irrigation, flood control, canals</td></tr>
+        <tr><td>Construction Management</td><td>Planning, scheduling, quality control</td></tr>
+        <tr><td>Surveying</td><td>Land measurement, mapping, setting out</td></tr>
+      </table>
+      <b>Functions of Civil Engineers:</b> Investigation → Design → Construction → Maintenance → Research → Teaching → <b>Estimating & Costing (= Professional Practice)</b> → Consulting<br>
+      <div class="err">NOT Civil branches: Thermal Engineering, Electronics, Chemical, Aeronautical (all belong to other departments).</div>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 11 — Introduction to Surveying (9%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">11</div>
+    <div class="ci"><strong>Surveying — Definition, Principle (Whole to Part), Classification, Tapes</strong><em>"Explain principle of whole to part" — 4 marks 2025</em><div class="tags"><span class="tag t-red">4 marks 2025</span><span class="tag t-red">MCQ</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Surveying</b> = Science and art of measuring Earth's surface — distances, angles, elevations — to determine relative positions and prepare maps/plans.<br><br>
+      <b>Objects:</b> Prepare maps and plans; fix land boundaries; provide data for construction; calculate areas/volumes.<br><br>
+      <b>Primary Divisions:</b>
+      <ul>
+        <li><b>Plane Surveying</b> — Earth treated as flat. For areas &lt;250 sq km. Curvature ignored. Used for most engineering projects.</li>
+        <li><b>Geodetic Surveying</b> — Takes Earth's curved shape into account. For large areas (countries, continents). National mapping.</li>
+      </ul>
+      <hr class="div">
+      <b>PRINCIPLE: Work from WHOLE to PART</b><br><br>
+      <b>Problem with "Part to Whole":</b> Every measurement has a small error. As you add section after section, errors ACCUMULATE. The final result has large compounded error — boundaries may not close.<br><br>
+      <b>Solution — "Whole to Part":</b>
+      <ol>
+        <li>First establish a few CONTROL POINTS spread across the ENTIRE area (measured with high precision)</li>
+        <li>These form the overall framework/skeleton</li>
+        <li>Fill in details between control points using ordinary methods</li>
+        <li>Any errors in detail work stay LOCAL — don't spread throughout</li>
+        <li>Multiple teams can work simultaneously on different sections</li>
+      </ol>
+      <div class="good">Benefits: Errors localized, not accumulated. Multiple teams can work simultaneously. Mistakes easily detected. Overall accuracy maintained even with local errors.</div>
+      <div class="bx">Analogy: Drawing India's map — first mark 4 corners accurately (whole), then states, then districts, then cities (parts). Not the other way around!</div>
+      <hr class="div">
+      <b>Measuring Tapes — Types:</b>
+      <table>
+        <tr><th>Tape</th><th>Material</th><th>Use</th></tr>
+        <tr><td>Cloth/Linen</td><td>Linen/cotton fibres</td><td>Rough surveying, cheap</td></tr>
+        <tr><td>Metallic</td><td>Cotton + brass wires</td><td>General work, stronger</td></tr>
+        <tr><td>Steel</td><td>Steel ribbon + varnish</td><td>Accurate general surveying</td></tr>
+        <tr><td><b>Invar</b></td><td><b>36% Nickel + 64% Steel</b></td><td><b>Highest precision — very low thermal expansion</b></td></tr>
+        <tr><td>Fibre glass</td><td>Glass fibres</td><td>Modern, flexible, non-conductive</td></tr>
+      </table>
+      <b>Plan vs Map:</b> Plan = small area, large scale (1:500), very detailed. Map = large area, small scale (1:50000), general features.
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Unit 12 — Elements of Building Construction (11%)</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">12.1</div>
+    <div class="ci"><strong>Types of Loads on Building — Dead, Live, Wind, Earthquake</strong><em>"Examine types of loads" — 4 marks 2025</em><div class="tags"><span class="tag t-red">4 marks 2025</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Load Type</th><th>Definition</th><th>Direction</th><th>Examples</th><th>Formula</th></tr>
+        <tr><td><b>Dead Load (DL)</b></td><td>Permanent, immovable weight of building's own parts</td><td>Vertical ↓</td><td>Walls, beams, slabs, columns, permanent fixtures</td><td>DL = Volume × Density</td></tr>
+        <tr><td><b>Live Load (LL)</b></td><td>Movable, temporary loads — can change anytime</td><td>Vertical ↓</td><td>People, furniture, equipment</td><td>From IS code: 2 kN/m² (residential), 2.5 kN/m² (office)</td></tr>
+        <tr><td><b>Wind Load (WL)</b></td><td>Pressure of wind on building surfaces</td><td>Horizontal →</td><td>Any exposed surface of tall buildings</td><td>P = K × V² (V = wind speed km/hr)</td></tr>
+        <tr><td><b>Earthquake Load (EL)</b></td><td>Inertia force from ground shaking</td><td>Horizontal →</td><td>Building as a whole acts like a pendulum</td><td>F = W × α/g</td></tr>
+        <tr><td>Snow Load</td><td>Weight of accumulated snow on roof</td><td>Vertical ↓</td><td>Cold regions (Himachal, Kashmir)</td><td>From IS codes</td></tr>
+      </table>
+      <div class="hl">Key: Dead + Live = VERTICAL (gravity) loads. Wind + Earthquake = HORIZONTAL (lateral) loads. Gujarat = Seismic Zone III — high earthquake risk. Tall buildings must resist ALL load types.</div>
+      <div class="warn">Wind load can be neglected ONLY IF building height H &lt; 3 × effective width B. Otherwise it must be included in structural design.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">12.2</div>
+    <div class="ci"><strong>Load-Bearing vs Framed Structure — Full Comparison</strong><em>"Compare and analyze" — 4 marks 2025 — Very likely again</em><div class="tags"><span class="tag t-red">4 marks 2025</span><span class="tag t-red">Sure to come</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Load Bearing:</b> Walls carry ALL loads. Load path: Roof slab → Walls → Foundation → Soil.<br>
+      <b>RCC Framed:</b> Columns+Beams carry loads, walls just fill space. Load path: Slab → Beams → Columns → Footing → Soil.<br><br>
+      <table>
+        <tr><th>Feature</th><th>Load Bearing</th><th>RCC Framed</th></tr>
+        <tr><td>Load carried by</td><td>Walls</td><td>Columns + Beams</td></tr>
+        <tr><td>Wall thickness</td><td>20–40 cm (structural)</td><td>10–15 cm (just partition)</td></tr>
+        <tr><td>Wall function</td><td>Structural — CANNOT be moved</td><td>Non-structural — CAN be moved</td></tr>
+        <tr><td>Carpet area</td><td>Reduces on lower floors (thicker walls)</td><td>Equal on all floors</td></tr>
+        <tr><td>Max floors</td><td>2–3 floors max</td><td>Unlimited floors</td></tr>
+        <tr><td>Cost</td><td>Lower for small buildings</td><td>Higher initially</td></tr>
+        <tr><td>Construction time</td><td>Slower</td><td>Faster (shuttering)</td></tr>
+        <tr><td>Flexibility</td><td>None — walls fixed forever</td><td>High — walls rearrangeable</td></tr>
+        <tr><td>Suitable for</td><td>Small homes, bungalows, max 2 storeys</td><td>Apartments, offices, malls — any height</td></tr>
+        <tr><td>Lateral load resistance</td><td>Poor (walls crack)</td><td>Excellent (frame absorbs)</td></tr>
+      </table>
+      <div class="good"><b>Composite Structure</b> = Mix of both. Outer walls load bearing, interior has RCC columns. Used in warehouses, medium buildings.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">12.3</div>
+    <div class="ci"><strong>All 9 Principles of Planning — Complete</strong><em>Aspect, Prospect, Privacy, Grouping, Roominess, Elegance, Circulation, Flexibility, Sanitation</em><div class="tags"><span class="tag t-red">4 marks very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="bx">Mnemonic: A P P G R E C F S = "A Proper Plan Gives Really Elegant, Comfortable, Flexible Spaces"</div>
+      <b>1. ASPECT:</b> Orient rooms according to sun and prevailing wind. Kitchen=east (morning sun, hygienic). Bedroom=away from harsh west sun. Living room=north/east. Study=north (no glare).<br><br>
+      <b>2. PROSPECT:</b> Views from inside rooms and building appearance from outside. Rooms should face pleasant views (garden, hills). Main entrance should face road. Bay windows help capture views.<br><br>
+      <b>3. PRIVACY:</b> Each room needs privacy from others and from outsiders. Internal: correct door positions, buffer zones, bedrooms away from living room. External: compound wall 1.35–1.5m, trees, windows at higher levels. Types: sight privacy (WC), sound privacy (bedroom, study).<br><br>
+      <b>4. GROUPING:</b> Related rooms together, unrelated apart. Kitchen+Dining = close. Bedroom+Toilet = together. WC = away from kitchen. Staircase accessible from all rooms.<br><br>
+      <b>5. ROOMINESS:</b> Maximum feel of space with minimum dimensions. L:W ratio = 1.2:1 to 1.5:1 (ideal). Beyond 2:1 = TUNNEL EFFECT. Light colours make room feel bigger. Built-in furniture saves space.<br><br>
+      <b>6. ELEGANCE:</b> Aesthetic beauty of building. Good proportions, quality materials, harmonious colours, appropriate facade design, blend with neighbourhood.<br><br>
+      <b>7. CIRCULATION:</b> Easy movement. Horizontal: corridors, verandah (circulation:usable = 1:4 ratio). Vertical: stairs, lifts (8–10% of floor area). Keep short, straight, well-lit.<br><br>
+      <b>8. FLEXIBILITY:</b> Multi-purpose rooms. Drawing room = guest bedroom. Study = home office. Future-proofs as family needs change.<br><br>
+      <b>9. SANITATION:</b> Health and cleanliness. Window area ≥ 1/7th floor area (hot-humid). Cross-ventilation (windows on opposite walls). DPC against dampness. Proper drainage. Clean sanitary units.
+      <div class="hl">Exam strategy: If asked for 3 principles — give Aspect, Roominess, Grouping with full explanation. If all 9 — write heading + 2-3 sentences each. Use mnemonic APPGRECFS.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">12.5</div>
+    <div class="ci"><strong>Building Components + Types of Residential Buildings</strong><em>Foundation to roof — every component</em><div class="tags"><span class="tag t-red">MCQ</span><span class="tag t-blue">Theory</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>SUBSTRUCTURE (below ground):</b>
+      <table>
+        <tr><th>Component</th><th>Function</th><th>Key dimensions</th></tr>
+        <tr><td>Foundation</td><td>Transfers ALL loads to soil. Shallow (strip, raft) or Deep (pile).</td><td>Below frost line, safe bearing capacity of soil</td></tr>
+        <tr><td>DPC</td><td>Damp Proof Course — horizontal waterproof layer. Stops moisture rising through walls.</td><td>At plinth level, 2.5–4cm thick</td></tr>
+      </table>
+      <b>SUPERSTRUCTURE (above ground):</b>
+      <table>
+        <tr><th>Component</th><th>Function</th><th>Key dimension</th></tr>
+        <tr><td>Plinth</td><td>Between ground and floor level. Protects from moisture, insects.</td><td>Height 30–90 cm</td></tr>
+        <tr><td>Wall</td><td>Encloses space, carries loads (load bearing) or just partition (framed).</td><td>Load bearing: 20–40cm, Partition: 10–15cm</td></tr>
+        <tr><td>Column</td><td>Vertical RCC member. Carries beam loads, transfers to footing.</td><td>Min 230×230mm</td></tr>
+        <tr><td>Beam</td><td>Horizontal RCC member. Carries slab load, transfers to columns.</td><td>Width ≥ column width</td></tr>
+        <tr><td>Slab</td><td>Flat RCC plate forming floors/roof. Carries loads to beams.</td><td>Min 100–125mm thick</td></tr>
+        <tr><td>Sill</td><td>Horizontal member BELOW window opening.</td><td>70–90cm above floor</td></tr>
+        <tr><td><b>Lintel</b></td><td>Horizontal RCC beam ABOVE door/window. Takes wall load above opening.</td><td>2.0m above floor, extends 10cm each side</td></tr>
+        <tr><td>Chajja</td><td>Slab projecting from wall above openings. Protects from rain + sun.</td><td>Projection: 45–90cm</td></tr>
+        <tr><td>Parapet</td><td>Low wall at roof edge. Safety against falling.</td><td>Height 1.0–1.3m, thickness min 10cm</td></tr>
+        <tr><td>Stair</td><td>Vertical access between floors.</td><td>Riser: 15–20cm, Tread: 25–30cm, Width: min 1.0m</td></tr>
+      </table>
+      <b>Types of Residential Buildings:</b> Bungalow (single-family detached, max 1 floor), Row house (attached houses sharing side walls), Semi-detached (two houses sharing one wall), Apartment/Flat (multi-storey, multiple families), Villa (luxury detached), Duplex (2 floors for one family), Tenement (low-cost dense housing).
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════ FORMULAS ═══════ -->
+<div id="formulas" class="section">
+
+<div class="unit-label">All Formulas + Key Values — Quick Reference</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">📐</div>
+    <div class="ci"><strong>Engineering Drawing Formulas</strong><em></em><div class="tags"><span class="tag t-blue">Formulas</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="formula">
+        <h4>Scale</h4>
+        <p>Drawing length = Actual length ÷ Scale denominator</p>
+        <p>RF (Representative Fraction) = Drawing size / Actual size (same units)</p>
+        <p>Example: Scale 1:50, Actual 25m → Drawing = 25÷50 = 0.5m = 50cm</p>
+      </div>
+      <div class="formula">
+        <h4>Isometric</h4>
+        <p>Isometric scale factor = cos45° / cos30° = 0.816</p>
+        <p>Isometric VIEW uses ACTUAL dimensions (scale = 1)</p>
+        <p>Circles → ELLIPSES in isometric (use 4-centre oval method)</p>
+      </div>
+      <div class="formula">
+        <h4>Ellipse</h4>
+        <p>Equation: x²/a² + y²/b² = 1 (a = semi-major, b = semi-minor)</p>
+        <p>Assume: Major axis = 100mm, Minor axis = 60mm</p>
+      </div>
+      <div class="formula">
+        <h4>Conics — Eccentricity</h4>
+        <p>e = distance from focus / distance from directrix</p>
+        <p>Circle: e=0 | Ellipse: 0&lt;e&lt;1 | Parabola: e=1 | Hyperbola: e&gt;1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">🔥</div>
+    <div class="ci"><strong>Thermodynamics + Gas Laws Formulas</strong><em></em><div class="tags"><span class="tag t-blue">Formulas</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="formula">
+        <h4>Temperature Conversion</h4>
+        <p>K = °C + 273</p>
+        <p>°F = 1.8 × °C + 32</p>
+        <p>°C = (°F - 32) / 1.8</p>
+      </div>
+      <div class="formula">
+        <h4>Gas Laws</h4>
+        <p>Boyle's Law (constant T): P₁V₁ = P₂V₂</p>
+        <p>Charles's Law (constant P): V₁/T₁ = V₂/T₂ [T in Kelvin!]</p>
+        <p>Combined: P₁V₁/T₁ = P₂V₂/T₂</p>
+        <p>Perfect Gas: PV = mRT</p>
+      </div>
+      <div class="formula">
+        <h4>Specific Heats (Air)</h4>
+        <p>Cp = 1.005 kJ/kg·K (constant pressure)</p>
+        <p>Cv = 0.718 kJ/kg·K (constant volume)</p>
+        <p>Cp - Cv = R = 0.287 kJ/kg·K</p>
+        <p>γ = Cp/Cv = 1.4 for air</p>
+      </div>
+      <div class="formula">
+        <h4>First Law of Thermodynamics</h4>
+        <p>Q = W + ΔU</p>
+        <p>Q = heat added to system</p>
+        <p>W = work done by system</p>
+        <p>ΔU = change in internal energy</p>
+      </div>
+      <div class="formula">
+        <h4>Steam</h4>
+        <p>Dryness fraction: x = m_steam / m_total (0 to 1)</p>
+        <p>Wet steam enthalpy: h = hf + x·hfg</p>
+        <p>Dry saturated steam: hg = hf + hfg</p>
+        <p>Superheated steam: h = hg + Cp·(Tsup - Tsat)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">❄️</div>
+    <div class="ci"><strong>Refrigeration Formulas</strong><em></em><div class="tags"><span class="tag t-blue">Formulas</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="formula">
+        <h4>COP (Coefficient of Performance)</h4>
+        <p>COP = Q₂ / W = Q₂ / (Q₁ - Q₂)</p>
+        <p>Q₂ = heat absorbed from cold body (refrigerating effect)</p>
+        <p>Q₁ = heat rejected to hot body</p>
+        <p>W = work input to compressor = Q₁ - Q₂</p>
+      </div>
+      <div class="formula">
+        <h4>Carnot COP (ideal maximum)</h4>
+        <p>COP_Carnot = T₂ / (T₁ - T₂)</p>
+        <p>T₁ = temperature of hot reservoir (condenser) in Kelvin</p>
+        <p>T₂ = temperature of cold reservoir (evaporator) in Kelvin</p>
+      </div>
+      <div class="formula">
+        <h4>Tonne of Refrigeration</h4>
+        <p>1 TR = 3.5 kW = 3.5 kJ/s = 210 kJ/min = 12000 BTU/hr</p>
+        <p>= heat to melt 1000 kg of ice at 0°C in 24 hours</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">🏗️</div>
+    <div class="ci"><strong>Civil Engineering Key Values</strong><em></em><div class="tags"><span class="tag t-blue">Formulas</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="formula">
+        <h4>Loads</h4>
+        <p>Wind load: P = K × V² (V = wind velocity in km/hr)</p>
+        <p>Earthquake: F = W × α/g (W = total weight, α = ground acceleration)</p>
+        <p>Residential LL = 2 kN/m² | Office LL = 2.5–3 kN/m²</p>
+      </div>
+      <div class="formula">
+        <h4>Planning</h4>
+        <p>Roominess: L:W ratio = 1.2:1 to 1.5:1 (ideal)</p>
+        <p>Tunnel effect if L:W &gt; 2:1</p>
+        <p>Circulation:Usable area = 1:4 (economical)</p>
+        <p>Window area ≥ floor area / 7 (hot-humid climate)</p>
+        <p>Compound wall height = 1.35–1.5m (external privacy)</p>
+        <p>Parapet height = 1.0–1.3m</p>
+      </div>
+      <div class="formula">
+        <h4>Staircase</h4>
+        <p>Riser height = 15–20 cm</p>
+        <p>Tread width = 25–30 cm</p>
+        <p>Stair width (min) = 1.0m</p>
+        <p>Rule: 2R + T = 60cm (ideal step proportion)</p>
+      </div>
+      <div class="formula">
+        <h4>Doors and Windows</h4>
+        <p>External door: 1.0m × 2.0m (W × H)</p>
+        <p>Internal door: 0.9m × 2.0m</p>
+        <p>Bathroom door: 0.7–0.8m × 2.0m</p>
+        <p>Window sill height: 70–90cm from floor</p>
+        <p>Lintel height: 2.0m from floor</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════ STRATEGY ═══════ -->
+<div id="strategy" class="section">
+
+<div class="unit-label">⚡ Exam Strategy + Memory Tricks + Tonight's Plan</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">📋</div>
+    <div class="ci"><strong>Expected 2026 Paper Structure</strong><em>Mark-wise prediction based on 2025 pattern</em><div class="tags"><span class="tag t-purple">Strategy</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>SECTION I — 10 MCQs × 1 mark = 10 marks (first 30 min)</b>
+      <div class="bx">Expected: 3–4 questions from Drawing (scale, lines, sections, Fusion 360, projections)
+2–3 questions from Mechanical (gas laws, engine types, steam, refrigeration)
+2–3 questions from Civil (surveying, loads, building, planning branches)
+→ Study ALL 20 MCQs in the MCQ tab first!</div>
+
+      <b>SECTION II — All questions, OR choice (5 marks each = 20 marks)</b>
+      <div class="bx">Q1/Q2: Ellipse by Concentric Circle Method OR Conic Sections from cone (5 marks) [CHOICE]
+Q3: Classify Solids with sketches (5 marks)
+Q4/Q5: Draw FV + TV of given 3D object using 1st angle projection (5 marks) [CHOICE]
+Q6: Draw Isometric View from given FV + TV (5 marks)</div>
+
+      <b>SECTION III — Theory Questions (20 marks)</b>
+      <div class="bx">Q1: Charles's Law — statement, formula, example (2 marks)
+Q2/Q3: IC vs EC Engine OR SI vs CI Engine (4 marks) [CHOICE]
+Q4: Classify Boilers in detail (3 marks)
+Q5: Define Refrigerant, COP, Refrigerating Effect (3 marks)
+Q6/Q7: Load-Bearing vs Framed Structure OR Types of Loads (4 marks) [CHOICE]
+Q8: Surveying Principle — Whole to Part (4 marks)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">🧠</div>
+    <div class="ci"><strong>All Memory Tricks in One Place</strong><em>Mnemonics, tricks, shortcuts</em><div class="tags"><span class="tag t-purple">Memory</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="formula">
+        <h4>9 Principles of Planning — APPGRECFS</h4>
+        <p>"A Proper Plan Gives Really Elegant, Comfortable, Flexible Spaces"</p>
+        <p>Aspect → Prospect → Privacy → Grouping → Roominess → Elegance → Circulation → Flexibility → Sanitation</p>
+      </div>
+      <div class="formula">
+        <h4>VCR Cycle Order — CCEE</h4>
+        <p>Compressor → Condenser → Expansion valve → Evaporator</p>
+        <p>"Cool Customers Enjoy Everything"</p>
+        <p>COOLING happens in EVAPORATOR (last component)</p>
+      </div>
+      <div class="formula">
+        <h4>Conic Sections — α vs θ rule</h4>
+        <p>α &gt; θ → Ellipse (E for Exceeds)</p>
+        <p>α = θ → Parabola (P for Perfect/equal)</p>
+        <p>α &lt; θ → Hyperbola (Hypo = less)</p>
+        <p>Through APEX → Triangle | Horizontal → Circle</p>
+      </div>
+      <div class="formula">
+        <h4>First Angle — "Opposite" rule</h4>
+        <p>Top view → BELOW front view</p>
+        <p>Left view → on RIGHT side of drawing</p>
+        <p>Right view → on LEFT side of drawing</p>
+        <p>"In first angle, everything goes OPPOSITE"</p>
+      </div>
+      <div class="formula">
+        <h4>SI vs CI — quick memory</h4>
+        <p>SI = Spark = Petrol = Otto = Small compression ratio (6–12)</p>
+        <p>CI = Compression = Diesel = Diesel cycle = LARGE ratio (14–22)</p>
+        <p>"CI is Costly to build but Cheap to run"</p>
+      </div>
+      <div class="formula">
+        <h4>Boilers — quick memory</h4>
+        <p>Cochran = Vertical, fire-tube, internally fired = Indian exam favourite</p>
+        <p>Lancashire = Horizontal, fire-tube, internally fired = long cylindrical</p>
+        <p>Babcock & Wilcox = Water tube = High pressure = externally fired</p>
+      </div>
+      <div class="formula">
+        <h4>Eccentricity of conics</h4>
+        <p>Circle = 0, Ellipse = 0 to 1, Parabola = 1, Hyperbola = &gt;1</p>
+        <p>"0, Between, 1, More" — in order of increasing eccentricity</p>
+      </div>
+      <div class="formula">
+        <h4>Invar tape</h4>
+        <p>INvar = INconvenient temperature VARiation doesn't affect it</p>
+        <p>36% Nickel + 64% Steel = low thermal expansion = precise surveys</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">⏰</div>
+    <div class="ci"><strong>Tonight's Study Plan — 2.5 Hours to Cover Everything</strong><em>Prioritised order for last-night revision</em><div class="tags"><span class="tag t-purple">Priority</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="good">
+        <b>STEP 1 (30 min) — MCQ Tab: Read all 20 MCQs</b><br>
+        Focus: Scale formula, First angle, Fusion 360 commands, Invar tape, VCR parts, civil branches. These are 10 guaranteed marks.
+      </div>
+      <div class="good">
+        <b>STEP 2 (20 min) — Comparison Tables: SI vs CI + IC vs EC</b><br>
+        Just memorise the tables. These are 4-mark questions. 8 marks possible from 2 comparisons.
+      </div>
+      <div class="good">
+        <b>STEP 3 (15 min) — Boiler Classification + Cochran facts</b><br>
+        7 classification criteria + Cochran = Vertical, fire-tube, internally fired, natural circulation. 3 marks.
+      </div>
+      <div class="good">
+        <b>STEP 4 (10 min) — 3 Definitions: Refrigerant + COP + Refrigerating Effect</b><br>
+        Write each in 2–3 sentences. Include COP formula. 3 marks.
+      </div>
+      <div class="good">
+        <b>STEP 5 (15 min) — All 9 Planning Principles</b><br>
+        Use mnemonic APPGRECFS. Write 2 sentences per principle. 4 marks.
+      </div>
+      <div class="good">
+        <b>STEP 6 (10 min) — Surveying Principle (Whole to Part)</b><br>
+        Statement + why not part-to-whole (errors accumulate) + benefits. 4 marks.
+      </div>
+      <div class="good">
+        <b>STEP 7 (15 min) — Ellipse construction steps</b><br>
+        7 steps. Memorise the logic: outer circle=vertical, inner circle=horizontal, intersection=ellipse point.
+      </div>
+      <div class="good">
+        <b>STEP 8 (10 min) — Charles's Law + First Law</b><br>
+        Statement + formula + example for each. 2 marks each.
+      </div>
+      <div class="good">
+        <b>STEP 9 (15 min) — Load-Bearing vs Framed + Types of Loads</b><br>
+        Tables already in guide. 4 marks each.
+      </div>
+      <div class="hl">Total: ~2 hours 20 minutes. That's everything. Go to sleep early — a rested brain performs better than an exhausted one! ✓</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div><!-- end .content -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+function toggle(head) {
+  const body = head.nextElementSibling;
+  const arrow = head.querySelector('.arrow');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+// Open first card in each section by default
+document.querySelectorAll('.section').forEach(sec => {
+  const firstHead = sec.querySelector('.card-head');
+  if (firstHead) {
+    const body = firstHead.nextElementSibling;
+    const arrow = firstHead.querySelector('.arrow');
+    if (body && arrow) {
+      body.classList.add('open');
+      arrow.style.transform = 'rotate(180deg)';
+    }
+  }
+});
+</script>
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section author-info">
+      <h3>Anshika Badala</h3>
+      <p>B.Tech Student & Web Developer</p>
+      <p class="copyright">© 2026 Anshika Badala. All rights reserved.</p>
+    </div>
+    <div class="footer-section contact-profiles">
+      <h4>Contact & Profiles</h4>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/anshika-badala-6b62ba36a/" target="_blank" rel="noopener noreferrer" class="social-link linkedin">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/anshikabadala" target="_blank" rel="noopener noreferrer" class="social-link github">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://leetcode.com/u/anshikabadala/" target="_blank" rel="noopener noreferrer" class="social-link leetcode">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.11 5.826a1.373 1.373 0 0 0-.01 1.937L13.52 14.18a1.373 1.373 0 0 0 1.94-.012l5.41-5.411a1.373 1.373 0 0 0-.013-1.94L14.444.41A1.374 1.374 0 0 0 13.483 0zm.012 3.125l4.382 4.382-3.125 3.125L10.37 6.25l3.125-3.125zm-6.25 6.25L4.12 12.5a1.373 1.373 0 0 0-.01 1.937l6.42 6.42a1.373 1.373 0 0 0 1.94-.012l3.125-3.125-6.25-6.25-2.112 2.112z"/></svg>
+          LeetCode
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
