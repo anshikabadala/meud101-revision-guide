@@ -1364,11 +1364,11 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <div class="viva-tabbar">
-  <button class="viva-btn on" onclick="switchVivaTab('draw')">✏️ Drawing</button>
-  <button class="viva-btn" onclick="switchVivaTab('mech')">⚙️ Mechanical</button>
-  <button class="viva-btn" onclick="switchVivaTab('refrig')">❄️ Refrigeration</button>
-  <button class="viva-btn" onclick="switchVivaTab('civil')">🏗️ Civil</button>
-  <button class="viva-btn" onclick="switchVivaTab('practical')">📐 Practical VIVA</button>
+  <button class="viva-btn on" onclick="switchVivaTab('viva-draw')">✏️ Drawing</button>
+  <button class="viva-btn" onclick="switchVivaTab('viva-mech')">⚙️ Mechanical</button>
+  <button class="viva-btn" onclick="switchVivaTab('viva-refrig')">❄️ Refrigeration</button>
+  <button class="viva-btn" onclick="switchVivaTab('viva-civil')">🏗️ Civil</button>
+  <button class="viva-btn" onclick="switchVivaTab('viva-practical')">📐 Practical VIVA</button>
 </div>
 
 <div class="viva-search-box">
@@ -1376,7 +1376,7 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <!-- ════════════ DRAWING ════════════ -->
-<div id="draw" class="viva-sec on">
+<div id="viva-draw" class="viva-sec on">
 
 <div class="unit-label">Engineering Drawing Fundamentals</div>
 
@@ -1654,7 +1654,7 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <!-- ════════════ MECHANICAL ════════════ -->
-<div id="mech" class="viva-sec">
+<div id="viva-mech" class="viva-sec">
 
 <div class="unit-label">Thermodynamics Basics</div>
 
@@ -1934,7 +1934,7 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <!-- ════════════ REFRIGERATION ════════════ -->
-<div id="refrig" class="viva-sec">
+<div id="viva-refrig" class="viva-sec">
 
 <div class="unit-label">Refrigeration and Air Conditioning</div>
 
@@ -2043,7 +2043,7 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <!-- ════════════ CIVIL ════════════ -->
-<div id="civil" class="viva-sec">
+<div id="viva-civil" class="viva-sec">
 
 <div class="unit-label">Civil Engineering Scope and Surveying</div>
 
@@ -2282,7 +2282,7 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 </div>
 
 <!-- ════════════ PRACTICAL VIVA ════════════ -->
-<div id="practical" class="viva-sec">
+<div id="viva-practical" class="viva-sec">
 
 <div class="unit-label">Questions they will ask about YOUR drawing in the practical exam</div>
 
@@ -2448,6 +2448,9 @@ function showTab(id) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   event.currentTarget.classList.add('active');
+  if (id === 'viva') {
+    updateVivaHeaders();
+  }
 }
 function toggle(head) {
   const body = head.nextElementSibling;
@@ -2483,6 +2486,8 @@ function switchVivaTab(id) {
     const cards = document.querySelectorAll('#viva .card');
     cards.forEach(card => card.style.display = 'block');
   }
+  
+  updateVivaHeaders();
 }
 
 function searchViva() {
@@ -2510,6 +2515,8 @@ function searchViva() {
     cards.forEach(card => {
       card.style.display = 'block';
     });
+    
+    updateVivaHeaders();
     return;
   }
   
@@ -2524,6 +2531,49 @@ function searchViva() {
       card.style.display = 'none';
     }
   });
+  
+  updateVivaHeaders();
+}
+
+function updateVivaHeaders() {
+  const sections = document.querySelectorAll('#viva .viva-sec');
+  
+  sections.forEach(sec => {
+    // We only want to process headers inside the active/visible section
+    if (!sec.classList.contains('on')) {
+      return;
+    }
+    
+    const children = Array.from(sec.children);
+    let currentLabel = null;
+    let visibleCardsInGroup = 0;
+    
+    children.forEach(child => {
+      if (child.classList.contains('unit-label')) {
+        if (currentLabel) {
+          currentLabel.style.display = (visibleCardsInGroup > 0) ? 'flex' : 'none';
+        }
+        currentLabel = child;
+        visibleCardsInGroup = 0;
+      } else if (child.classList.contains('card')) {
+        if (cardHasVisibleContent(child)) {
+          visibleCardsInGroup++;
+        }
+      }
+    });
+    
+    if (currentLabel) {
+      currentLabel.style.display = (visibleCardsInGroup > 0) ? 'flex' : 'none';
+    }
+  });
+}
+
+function cardHasVisibleContent(card) {
+  // If card is hidden, it's not visible
+  if (card.style.display === 'none') {
+    return false;
+  }
+  return true;
 }
 
 </script>
