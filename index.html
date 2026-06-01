@@ -243,6 +243,78 @@
     }
   }
 
+
+  /* VIVA SUB-TABS */
+  .viva-tabbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .viva-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .viva-btn:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+    background: var(--blue-light);
+  }
+  .viva-btn.on {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+    box-shadow: 0 2px 4px rgba(26, 86, 219, 0.2);
+  }
+  .viva-sec {
+    display: none;
+  }
+  .viva-sec.on {
+    display: block;
+  }
+  
+  /* VIVA SEARCH BAR */
+  .viva-search-box {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .viva-search-box input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 13.5px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+  .viva-search-box input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+  }
+  .viva-search-box::before {
+    content: "🔍";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
 </style>
 </head>
 <body>
@@ -266,6 +338,7 @@
   <button class="tab-btn" onclick="showTab('civil')">🏗️ Civil</button>
   <button class="tab-btn" onclick="showTab('formulas')">🔢 All Formulas</button>
   <button class="tab-btn" onclick="showTab('strategy')">⚡ Exam Strategy</button>
+<button class="tab-btn" onclick="showTab('viva')">🎓 Complete VIVA Question Bank</button>
 </div>
 
 <div class="content">
@@ -1281,6 +1354,1092 @@ Q8: Surveying Principle — Whole to Part (4 marks)</div>
 
 </div>
 
+
+<!-- ═══════ VIVA QUESTION BANK ═══════ -->
+<div id="viva" class="section">
+
+<div class="banner">
+  <h1>Complete VIVA Question Bank — MEUD101</h1>
+  <p>Every possible question your professor can ask · Simple answers · All 12 chapters covered · Tap to reveal answer</p>
+</div>
+
+<div class="viva-tabbar">
+  <button class="viva-btn on" onclick="switchVivaTab('draw')">✏️ Drawing</button>
+  <button class="viva-btn" onclick="switchVivaTab('mech')">⚙️ Mechanical</button>
+  <button class="viva-btn" onclick="switchVivaTab('refrig')">❄️ Refrigeration</button>
+  <button class="viva-btn" onclick="switchVivaTab('civil')">🏗️ Civil</button>
+  <button class="viva-btn" onclick="switchVivaTab('practical')">📐 Practical VIVA</button>
+</div>
+
+<div class="viva-search-box">
+  <input type="text" id="viva-search" placeholder="🔍 Search VIVA questions (e.g. Invar, foundation, Charles)..." oninput="searchViva()">
+</div>
+
+<!-- ════════════ DRAWING ════════════ -->
+<div id="draw" class="viva-sec on">
+
+<div class="unit-label">Engineering Drawing Fundamentals</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">1</div>
+    <div class="qi"><strong>What is Engineering Drawing? Why is it important?</strong><em>Most basic question — must know</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Engineering Drawing</b> is a graphical language used by engineers to communicate the exact shape, size, and position of an object. It is a method of representing a 3D object on a 2D paper using standard rules and symbols.<br><br>
+      <b>Importance:</b>
+      <ul>
+        <li>It is a universal language — understood by engineers worldwide</li>
+        <li>Shows true shape and exact dimensions of the object</li>
+        <li>Used for manufacturing, construction, and fabrication</li>
+        <li>Detects design errors before actual production saves money</li>
+        <li>Acts as a permanent legal record of a design</li>
+      </ul>
+      <div class="hl">One-line answer: "Engineering drawing is the language of engineers — it communicates exact shape, size and position of every part using standard rules."</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">2</div>
+    <div class="qi"><strong>What is BIS? What is ISO? What is SP:46?</strong><em>Standards question</em><div class="tags"><span class="tag tag-r">Likely MCQ + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>BIS = Bureau of Indian Standards.</b> It is the national body that sets standards for products, processes, and services in India. For engineering drawing, India follows the code <b>SP:46</b> (published 1988).<br><br>
+      <b>ISO = International Organization for Standardization.</b> It is the global body — members from 160+ countries — that ensures products and drawings from different countries are compatible.<br><br>
+      <b>SP:46</b> = The Indian standard code for Engineering Drawing Practice. It specifies rules for line types, scales, projection methods, dimensioning, etc.<br><br>
+      <div class="hl">India uses FIRST ANGLE projection as per BIS. USA uses THIRD ANGLE (ANSI standard).</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">3</div>
+    <div class="qi"><strong>What are the different types of lines used in engineering drawing?</strong><em>Your professor WILL ask this</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Line type</th><th>How it looks</th><th>What it shows</th></tr>
+        <tr><td><b>Object / Visible line</b></td><td>Thick continuous ———</td><td>Edges you CAN see</td></tr>
+        <tr><td><b>Hidden line</b></td><td>Medium dashes - - - -</td><td>Edges you CANNOT see (inside or behind)</td></tr>
+        <tr><td><b>Centre line</b></td><td>Thin long-short -·-·-</td><td>Axis of symmetry, centre of holes</td></tr>
+        <tr><td><b>Dimension line</b></td><td>Thin with arrowheads ↔</td><td>Shows the measurement</td></tr>
+        <tr><td><b>Extension line</b></td><td>Thin continuous</td><td>Extends from object to show what is measured</td></tr>
+        <tr><td><b>Section / Hatching line</b></td><td>Thin, 45°, equally spaced</td><td>Shows the cut surface in a section view</td></tr>
+        <tr><td><b>Cutting plane line</b></td><td>Thick chain with arrows at ends</td><td>Shows where the object is being cut</td></tr>
+        <tr><td><b>Leader line</b></td><td>Thin line with arrow or dot</td><td>Points to a feature with a note</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">4</div>
+    <div class="qi"><strong>What is a scale? What is RF? Types of scales?</strong><em>Calculation comes in exam, definition in VIVA</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Scale</b> = The ratio of the drawing size to the actual size of the object. Used when objects are too big or too small to draw at actual size.<br><br>
+      <b>RF = Representative Fraction</b> = Drawing length divided by actual length (in SAME units). Example: RF = 1/50 means 1cm on paper = 50cm in reality.<br><br>
+      <b>Three types:</b>
+      <ul>
+        <li><b>Full scale (1:1)</b> — Drawing is the same as actual size. Used for small machine parts.</li>
+        <li><b>Reducing scale (1:50, 1:100)</b> — Drawing is smaller. Used for buildings, roads.</li>
+        <li><b>Enlarging scale (10:1)</b> — Drawing is bigger. Used for watch parts, chips.</li>
+      </ul>
+      <b>Plain Scale</b> = Reads two units (km + m). <b>Diagonal Scale</b> = Reads three units (km + m + dm) using diagonal lines.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">5</div>
+    <div class="qi"><strong>What are engineering curves? Name them all.</strong><em>Your friend was asked this!</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      Engineering curves are special mathematical curves used in engineering design and drawing.<br><br>
+      <b>1. Conic Sections</b> — curves obtained by cutting a cone at different angles: Circle, Ellipse, Parabola, Hyperbola.<br><br>
+      <b>2. Cycloid</b> — path traced by a point on the circumference of a circle rolling along a STRAIGHT LINE without slipping. Like tracking a point on a rolling wheel. Used in gear tooth profiles.<br><br>
+      <b>3. Epicycloid</b> — circle rolls OUTSIDE another fixed circle. Used in epicyclic gears.<br><br>
+      <b>4. Hypocycloid</b> — circle rolls INSIDE another fixed circle.<br><br>
+      <b>5. Involute</b> — curve traced by the end of a thread as it is UNWOUND from a circle. Like unrolling a spool of thread. Used in gear tooth design (most common gear tooth shape).<br><br>
+      <b>6. Archimedean Spiral</b> — point moves away from a fixed point at uniform rate while also rotating uniformly. Turns are equally spaced. Used in watch springs, cam mechanisms.<br><br>
+      <b>7. Helix</b> — point moves along a cylinder while rotating around it. Like a screw thread or spring. Used in bolts, springs, helical gears.
+      <div class="hl">Quick memory: C-C-E-H-I-S-H = "Can Clever Engineers Help Invent Spiral Helixes" (Cycloid, Conic, Epicycloid, Hypocycloid, Involute, Spiral, Helix)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">6</div>
+    <div class="qi"><strong>What are conic sections? How do you get ellipse, parabola, hyperbola from a cone?</strong><em>Your friend was asked about engineering curves — this is the detailed follow-up</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Conic Sections</b> = Curves obtained when a cone is cut by a flat plane at different angles. Discovered by ancient Greek mathematician Apollonius.<br><br>
+      Imagine an ice cream cone. The angle of cutting determines the shape:<br><br>
+      <table>
+        <tr><th>If you cut like this...</th><th>You get...</th><th>Eccentricity</th></tr>
+        <tr><td>Horizontal cut (perpendicular to axis)</td><td><b>Circle</b></td><td>e = 0</td></tr>
+        <tr><td>Inclined cut, steeper than generator</td><td><b>Ellipse</b> (closed oval)</td><td>0 &lt; e &lt; 1</td></tr>
+        <tr><td>Cut parallel to exactly one generator</td><td><b>Parabola</b> (open U shape)</td><td>e = 1</td></tr>
+        <tr><td>Cut parallel to axis or very steep</td><td><b>Hyperbola</b> (two branches)</td><td>e &gt; 1</td></tr>
+        <tr><td>Cut through the apex (tip)</td><td><b>Triangle</b></td><td>—</td></tr>
+      </table>
+      <b>Eccentricity (e)</b> = ratio of distance from focus to distance from directrix. It determines which conic you get.<br><br>
+      <b>Real-life applications:</b>
+      <ul>
+        <li>Ellipse → Planetary orbits, elliptical gears, oval tunnels</li>
+        <li>Parabola → Satellite dish, car headlights (focus = light source), cable bridges</li>
+        <li>Hyperbola → Cooling towers of power plants, nuclear reactor towers</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">7</div>
+    <div class="qi"><strong>What is orthographic projection? Explain first and third angle.</strong><em>Most important drawing VIVA question</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Orthographic Projection</b> = A method of drawing a 3D object on paper by projecting it onto 2D flat planes from different directions. The projecting lines (called projectors) are parallel to each other and perpendicular to the plane. You get multiple views — Front, Top, Side — that together fully describe the object.<br><br>
+      <b>Why orthographic?</b> Unlike a photo, orthographic views show TRUE shapes and TRUE dimensions — essential for manufacturing.<br><br>
+      <b>Three principal planes:</b>
+      <ul>
+        <li>VP (Vertical Plane) → Front View</li>
+        <li>HP (Horizontal Plane) → Top View</li>
+        <li>PP (Profile Plane) → Side View</li>
+      </ul>
+      <b>First Angle Projection (India/Europe):</b> Object is placed between the observer and the planes. The view "falls through" and lands on the plane behind/below.
+      <ul>
+        <li>Top View goes BELOW Front View</li>
+        <li>Left Side View goes on RIGHT side</li>
+        <li>Right Side View goes on LEFT side</li>
+      </ul>
+      <b>Third Angle Projection (USA):</b> Planes are between the observer and object. Like looking through glass.
+      <ul>
+        <li>Top View goes ABOVE Front View</li>
+        <li>Right Side View goes on RIGHT side</li>
+      </ul>
+      <div class="hl">India uses FIRST ANGLE. Simple rule: In first angle, the view goes to the OPPOSITE side from where you're looking.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">8</div>
+    <div class="qi"><strong>What is a sectional view? Why is it used? Types?</strong><em>Your friend was asked "where will sectional views be cut down"</em><div class="tags"><span class="tag tag-r">Very likely — friend was asked!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Sectional View</b> = An imaginary cut is made through an object with a cutting plane, one part is removed, and you look at the exposed internal features. It reveals the INSIDE of the object clearly.<br><br>
+      <b>Why used?</b> When an object has many internal features (holes, slots, cavities), using hidden lines makes the drawing very confusing. A section view removes that confusion by showing inside directly.<br><br>
+      <b>Types of sectional views:</b>
+      <ul>
+        <li><b>Full Section</b> — cutting plane cuts completely through. Entire view shows cross-section.</li>
+        <li><b>Half Section</b> — only one quarter removed. Half shows inside, half shows outside. Used for SYMMETRICAL objects.</li>
+        <li><b>Offset Section</b> — cutting plane is stepped (offset) to pass through features not in one straight line.</li>
+        <li><b>Revolved Section</b> — cross-section is rotated 90° in place on the view itself.</li>
+        <li><b>Partial (Broken-out) Section</b> — only small portion cut open.</li>
+      </ul>
+      <b>Hatching (Section lines):</b> Thin lines at 45°, equally spaced (2–5mm). Adjacent parts have opposite direction or different spacing. Do NOT hatch bolts, nuts, solid shafts, ribs — even when cut.
+      <div class="warn">If CP is parallel to HP → Apparent Section = True Section. If CP is inclined → Apparent Section &lt; True Section (distorted).</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">9</div>
+    <div class="qi"><strong>What is isometric projection? What are isometric axes?</strong><em>You'll draw isometric in practical — they'll ask theory</em><div class="tags"><span class="tag tag-r">Very likely — practical topic</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Isometric Projection</b> = A type of 3D drawing where all three axes (length, width, height) are equally inclined to the picture plane and equally foreshortened. Unlike orthographic (which needs multiple views), isometric shows all 3 dimensions in ONE single view.<br><br>
+      <b>Isometric Axes:</b>
+      <ul>
+        <li>Three axes — one VERTICAL, and two at 30° to horizontal (one going left, one going right)</li>
+        <li>All three axes are at 120° to each other</li>
+      </ul>
+      <b>Isometric Lines</b> = Lines parallel to any isometric axis. Can be measured directly.<br>
+      <b>Non-Isometric Lines</b> = Lines NOT parallel to any axis (slanted surfaces). Cannot be directly measured — you find their endpoints first.<br><br>
+      <b>Isometric Scale:</b> True isometric uses scale factor = 0.816. But in practice we use <b>Isometric VIEW</b> which uses actual dimensions directly (much simpler, preferred in exams).<br><br>
+      <b>Important:</b> Circles in isometric become ELLIPSES. Always draw them using the 4-centre oval method.
+      <div class="hl">If asked "what is the isometric scale factor?" → Answer: 0.816 (= cos45°/cos30°)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">10</div>
+    <div class="qi"><strong>What is an ellipse? How do you draw it by concentric circle method?</strong><em>You may draw an ellipse in practical</em><div class="tags"><span class="tag tag-r">Practical topic</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Ellipse</b> = A closed oval curve. It has two axes — Major axis (longer) and Minor axis (shorter) — both passing through the centre and perpendicular to each other. It is a conic section where eccentricity e is between 0 and 1.<br><br>
+      <b>Concentric Circle Method — Steps:</b>
+      <ol>
+        <li>Draw horizontal major axis AB and vertical minor axis CD through centre O.</li>
+        <li>Draw two concentric circles with centre O — outer circle (radius = semi-major axis) and inner circle (radius = semi-minor axis).</li>
+        <li>Divide both circles into 12 equal parts (every 30°). Draw radii through both circles.</li>
+        <li>At each point on OUTER circle → draw a vertical line (parallel to minor axis).</li>
+        <li>At corresponding point on INNER circle → draw a horizontal line (parallel to major axis).</li>
+        <li>Where these two lines meet = one point on the ellipse. Mark it.</li>
+        <li>Repeat for all 12 points. Join all points + A, B, C, D with a smooth curve.</li>
+      </ol>
+      <div class="good">Logic: Outer circle gives Y-coordinate, inner circle gives X-coordinate. Their intersection is the ellipse point. This works because the ellipse equation is x²/a² + y²/b² = 1.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">11</div>
+    <div class="qi"><strong>What is the difference between isometric VIEW and isometric PROJECTION?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Feature</th><th>Isometric VIEW</th><th>Isometric PROJECTION</th></tr>
+        <tr><td>Lengths used</td><td>Actual/true lengths directly</td><td>Lengths × 0.816 (foreshortened)</td></tr>
+        <tr><td>Appearance</td><td>Slightly larger than true</td><td>Truly correct proportions</td></tr>
+        <tr><td>Complexity</td><td>Simple — just use ruler</td><td>Need to scale every measurement</td></tr>
+        <tr><td>Used in exams?</td><td>YES — most common</td><td>Rarely asked</td></tr>
+      </table>
+      <div class="hl">In your practical exam, you will draw ISOMETRIC VIEW (using actual dimensions). Only if specifically asked for "isometric projection" do you multiply by 0.816.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">12</div>
+    <div class="qi"><strong>What is Fusion 360? What are its workspaces?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Fusion 360</b> = A 3D CAD (Computer-Aided Design) software made by Autodesk. Used for 3D modelling, simulation, and manufacturing of products.<br><br>
+      <b>Advantages of CAD over manual drawing:</b> Faster, more accurate, easy to modify, can simulate and test, easy sharing, 3D visualisation.<br><br>
+      <b>Workspaces:</b> Design (3D modelling), Render (realistic appearance), Animation (moving parts), Drawing (2D engineering drawings), Manufacture (CNC/3D printing), Simulation (stress/heat analysis).<br><br>
+      <b>Key commands:</b> Box, Cylinder, Sphere, <b>Torus (ring/donut)</b>, Coil (spring), Extrude (2D to 3D), <b>Mirror (symmetrical copy)</b>, Revolve (round shapes), Hole, Fillet (round edges).
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ════════════ MECHANICAL ════════════ -->
+<div id="mech" class="viva-sec">
+
+<div class="unit-label">Thermodynamics Basics</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">13</div>
+    <div class="qi"><strong>What is Charles's Law? State it with formula.</strong><em>2-mark exam question — also VIVA</em><div class="tags"><span class="tag tag-r">2 marks exam + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Charles's Law</b> states: "At constant pressure, the volume of a given mass of a perfect gas is directly proportional to its absolute temperature."<br><br>
+      Simply: <b>If you heat a gas (keeping pressure same), it expands. If you cool it, it shrinks.</b><br><br>
+      <div class="bx">Formula: V₁/T₁ = V₂/T₂ (Temperature MUST be in Kelvin — K = °C + 273)<br>Where V = volume, T = absolute temperature</div>
+      <b>Real-life example:</b> A balloon expands in hot sun and shrinks in cold weather — same pressure (atmosphere), but temperature changes volume.<br><br>
+      <b>Boyle's Law (just to know the difference):</b> At constant TEMPERATURE, P₁V₁ = P₂V₂ (pressure and volume are inversely proportional).
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">14</div>
+    <div class="qi"><strong>What is the First Law of Thermodynamics?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>First Law of Thermodynamics:</b> "Energy can neither be created nor destroyed — it can only be converted from one form to another."<br><br>
+      This is the law of <b>Conservation of Energy</b>.<br><br>
+      <div class="bx">Formula: Q = W + ΔU<br>Q = heat added to the system<br>W = work done BY the system<br>ΔU = increase in internal energy of the system</div>
+      <b>Example:</b> In a petrol engine — chemical energy of fuel → heat energy (combustion) → mechanical energy (piston moves) → kinetic energy (car moves). Total energy is conserved throughout.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">15</div>
+    <div class="qi"><strong>What is a prime mover? Give examples.</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Prime Mover</b> = The first machine in a power chain that converts natural energy (heat, water, wind) into mechanical energy (rotation or motion).<br><br>
+      Think of it as the "starter" — it generates the original mechanical power.<br><br>
+      <b>Examples:</b>
+      <ul>
+        <li>IC Engine (petrol/diesel) — converts fuel energy to rotation</li>
+        <li>Steam turbine — converts steam energy to rotation</li>
+        <li>Water turbine (Pelton wheel) — converts falling water energy to rotation</li>
+        <li>Wind turbine — converts wind energy to rotation</li>
+        <li>Gas turbine — used in jet engines</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Steam and Boilers</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">16</div>
+    <div class="qi"><strong>What is a boiler? What is it used for?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Boiler</b> = A closed pressure vessel in which water is converted into steam at the required pressure and temperature by burning fuel (coal, oil, gas).<br><br>
+      <b>Uses of steam from boiler:</b>
+      <ul>
+        <li>Running steam turbines to generate electricity</li>
+        <li>Heating in industries (paper, textile, food processing)</li>
+        <li>Old steam locomotives and ships</li>
+        <li>Steam sterilisation in hospitals</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">17</div>
+    <div class="qi"><strong>What are the types of steam? What is dryness fraction?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Types of steam:</b><br><br>
+      <b>1. Wet Steam</b> — mixture of steam + water droplets. Temperature = saturation temperature. Dryness fraction x is between 0 and 1. Not suitable for turbines (water damages blades).<br><br>
+      <b>2. Dry Saturated Steam</b> — all water has converted to steam. Temperature = saturation temperature (100°C at 1 atm). Dryness fraction x = 1 exactly.<br><br>
+      <b>3. Superheated Steam</b> — temperature is ABOVE saturation temperature. Behaves like a perfect gas (obeys Boyle's and Charles's laws). Best for turbines — more energy, no water droplets.<br><br>
+      <b>Dryness Fraction (x)</b> = mass of dry steam / total mass of wet steam mixture.
+      <ul>
+        <li>x = 0 → all water (just saturated water, no steam)</li>
+        <li>x = 1 → dry saturated steam (all steam, no water)</li>
+        <li>0 &lt; x &lt; 1 → wet steam (mixture)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">18</div>
+    <div class="qi"><strong>Classify boilers in 7 different ways.</strong><em>3-mark exam question — also common VIVA</em><div class="tags"><span class="tag tag-r">3 marks exam + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <table>
+        <tr><th>Based on</th><th>Types</th><th>Examples</th></tr>
+        <tr><td>Orientation</td><td>Vertical / Horizontal</td><td>Cochran (V), Lancashire (H)</td></tr>
+        <tr><td>Gas/water position</td><td>Fire-tube / Water-tube</td><td>Cochran (FT), Babcock & Wilcox (WT)</td></tr>
+        <tr><td>Furnace location</td><td>Internally fired / Externally fired</td><td>Cochran (int), B&W (ext)</td></tr>
+        <tr><td>Water circulation</td><td>Natural / Forced (by pump)</td><td>Lancashire (nat), Benson (forced)</td></tr>
+        <tr><td>Working pressure</td><td>Low / Medium / High</td><td>Cochran (low), B&W (high)</td></tr>
+        <tr><td>Mobility</td><td>Stationary / Mobile</td><td>Lancashire (stat), Locomotive (mobile)</td></tr>
+        <tr><td>Number of tubes</td><td>Single tube / Multi-tube</td><td>Cornish (single), Cochran (multi)</td></tr>
+      </table>
+      <div class="hl">Cochran Boiler: Vertical, Multi-tube, Fire-tube, Internally fired, Natural circulation, Low-medium pressure. This is the most asked boiler in VIVA.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">19</div>
+    <div class="qi"><strong>Describe the Cochran Boiler.</strong><em>Most popular boiler in VIVA</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Cochran Boiler</b> = A vertical, multi-tube, internally fired, fire-tube, natural circulation boiler.<br><br>
+      <b>Main parts:</b> Outer shell, inner dome, fire box, furnace, fire tubes, flue tubes, grate, ash pit, water level gauge, steam stop valve, safety valve, pressure gauge, feed check valve.<br><br>
+      <b>Working:</b>
+      <ol>
+        <li>Coal burns on the grate inside the furnace</li>
+        <li>Hot gases rise and hit the dome-shaped top of the firebox</li>
+        <li>Gases are deflected and pass through the fire tubes (tubes surrounded by water)</li>
+        <li>Heat from gases transfers to water → water converts to steam</li>
+        <li>Steam collects in the space above water in the shell</li>
+        <li>Steam leaves through the steam stop valve for use</li>
+        <li>Waste gases exit through the chimney at the bottom</li>
+      </ol>
+      <b>Specifications:</b> Shell = 2.75m diameter × 5.75m height | Pressure = 6.5 bar (max 15 bar) | Efficiency = 70–75%
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">IC Engines</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">20</div>
+    <div class="qi"><strong>What is an IC engine? What are its basic parts?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>IC Engine (Internal Combustion Engine)</b> = A heat engine where the fuel is burned INSIDE the engine cylinder. The expanding hot gases directly push the piston to produce mechanical work.<br><br>
+      <b>Basic parts:</b>
+      <ul>
+        <li><b>Cylinder</b> — the hollow chamber where burning happens</li>
+        <li><b>Piston</b> — slides up and down inside cylinder. Converts pressure to motion.</li>
+        <li><b>Connecting rod</b> — connects piston to crankshaft</li>
+        <li><b>Crankshaft</b> — converts back-and-forth piston motion into rotation</li>
+        <li><b>Flywheel</b> — stores energy, smooths out power strokes</li>
+        <li><b>Inlet valve</b> — allows fresh air/fuel mixture in</li>
+        <li><b>Exhaust valve</b> — lets burnt gases out</li>
+        <li><b>Spark plug</b> (SI engines only) — creates electric spark to ignite petrol</li>
+        <li><b>Fuel injector</b> (CI engines only) — injects diesel at high pressure</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">21</div>
+    <div class="qi"><strong>What is TDC, BDC, stroke, bore, compression ratio?</strong><em>Basic terminology VIVA question</em></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>TDC (Top Dead Centre)</b> = Highest position the piston can reach in the cylinder.<br>
+      <b>BDC (Bottom Dead Centre)</b> = Lowest position the piston can reach.<br>
+      <b>Stroke</b> = Distance piston travels from TDC to BDC (or BDC to TDC). One-way travel.<br>
+      <b>Bore</b> = Internal diameter of the cylinder.<br>
+      <b>Swept Volume (Vs)</b> = Volume swept by piston from TDC to BDC = (π/4) × D² × L<br>
+      <b>Clearance Volume (Vc)</b> = Small volume remaining above piston when it's at TDC. Cannot be zero.<br>
+      <div class="bx">Compression Ratio (r) = (Swept Volume + Clearance Volume) / Clearance Volume<br>= (Vs + Vc) / Vc<br>SI engines: r = 6:1 to 12:1 | CI engines: r = 14:1 to 22:1</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">22</div>
+    <div class="qi"><strong>What is 2-stroke engine? What is 4-stroke engine? Difference?</strong><em>Your friend was asked this! Very likely.</em><div class="tags"><span class="tag tag-r">Very likely — friend was asked!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>4-Stroke Engine:</b> The complete working cycle takes FOUR strokes (movements) of the piston = 2 complete rotations of crankshaft. One power stroke per 2 revolutions.<br><br>
+      <b>4 strokes are:</b>
+      <ol>
+        <li><b>Suction stroke</b> — piston moves DOWN, inlet valve OPEN, fresh air/fuel mixture enters</li>
+        <li><b>Compression stroke</b> — piston moves UP, both valves CLOSED, mixture is compressed</li>
+        <li><b>Power/Expansion stroke</b> — fuel ignites (spark plug fires), gases expand, piston PUSHED DOWN — this is the only stroke producing power</li>
+        <li><b>Exhaust stroke</b> — piston moves UP, exhaust valve OPEN, burnt gases pushed out</li>
+      </ol>
+      <b>2-Stroke Engine:</b> Complete cycle in TWO strokes = 1 rotation. Power stroke every revolution. No separate valves — uses ports (holes in cylinder wall).<br><br>
+      <table>
+        <tr><th>Feature</th><th>2-Stroke</th><th>4-Stroke</th></tr>
+        <tr><td>Power strokes</td><td>Every revolution (1/rev)</td><td>Every 2 revolutions (1/2 rev)</td></tr>
+        <tr><td>Valves</td><td>No valves — uses ports</td><td>Inlet and exhaust valves</td></tr>
+        <tr><td>Power per cc</td><td>More (theoretically)</td><td>Less</td></tr>
+        <tr><td>Fuel efficiency</td><td>Poor (some fuel escapes)</td><td>Better</td></tr>
+        <tr><td>Pollution</td><td>More</td><td>Less</td></tr>
+        <tr><td>Weight</td><td>Light, simple, cheap</td><td>Heavy, complex</td></tr>
+        <tr><td>Uses</td><td>Old scooters, chainsaws, lawnmowers</td><td>Modern cars, bikes, trucks</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">23</div>
+    <div class="qi"><strong>What is the difference between SI engine and CI engine?</strong><em>4-mark exam question + VIVA</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>SI Engine (Spark Ignition) = Petrol Engine:</b> Air + petrol mixture enters → compressed a little → SPARK PLUG fires → explosion → piston pushed down.<br><br>
+      <b>CI Engine (Compression Ignition) = Diesel Engine:</b> Only air enters → compressed A LOT (heats up to ~600°C) → diesel is injected → diesel SELF-IGNITES due to heat → piston pushed down. No spark plug needed.<br><br>
+      <table>
+        <tr><th>Parameter</th><th>SI Engine (Petrol)</th><th>CI Engine (Diesel)</th></tr>
+        <tr><td>Working cycle</td><td>Otto cycle</td><td>Diesel cycle</td></tr>
+        <tr><td>Ignition</td><td>Spark plug</td><td>Self-ignition by compression</td></tr>
+        <tr><td>Fuel</td><td>Petrol</td><td>Diesel</td></tr>
+        <tr><td>Compression ratio</td><td>6–12:1 (LOW)</td><td>14–22:1 (HIGH)</td></tr>
+        <tr><td>Efficiency</td><td>25–30%</td><td>35–40%</td></tr>
+        <tr><td>Running cost</td><td>Higher</td><td>Lower</td></tr>
+        <tr><td>Applications</td><td>Cars, bikes, scooters</td><td>Trucks, buses, tractors, ships</td></tr>
+      </table>
+      <div class="hl">Why CI needs higher compression? Air must reach ~600°C for diesel to self-ignite. If petrol engine had that high compression, petrol would ignite too early before piston reaches TDC — called KNOCKING. That's why petrol needs a spark plug at the right moment.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum na">24</div>
+    <div class="qi"><strong>What is the difference between IC engine and EC engine?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>IC Engine</b> = fuel burns INSIDE the cylinder. Expanding gases directly push the piston.<br>
+      <b>EC Engine</b> = fuel burns OUTSIDE (in a separate boiler/furnace). Heat makes steam, steam runs the engine.<br><br>
+      <table>
+        <tr><th>Parameter</th><th>IC Engine</th><th>EC Engine</th></tr>
+        <tr><td>Combustion</td><td>Inside cylinder</td><td>Outside in furnace/boiler</td></tr>
+        <tr><td>Working fluid</td><td>Fuel + air mixture</td><td>Separate steam/hot gas</td></tr>
+        <tr><td>Space required</td><td>Less — compact</td><td>More — needs boiler too</td></tr>
+        <tr><td>Thermal efficiency</td><td>Higher (20–40%)</td><td>Lower (10–20%)</td></tr>
+        <tr><td>Fuel cost</td><td>Higher (liquid fuel only)</td><td>Lower (any fuel — coal, wood)</td></tr>
+        <tr><td>Starting time</td><td>Immediate</td><td>Long wait for steam</td></tr>
+        <tr><td>Examples</td><td>Car engine, generator</td><td>Steam turbine, steam engine</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ════════════ REFRIGERATION ════════════ -->
+<div id="refrig" class="viva-sec">
+
+<div class="unit-label">Refrigeration and Air Conditioning</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">25</div>
+    <div class="qi"><strong>What is refrigeration? What is its principle?</strong><em>Your friend was asked about refrigerator — start here</em><div class="tags"><span class="tag tag-r">Very likely — friend was asked!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Refrigeration</b> = The process of removing heat from a body/space at a temperature LOWER than the surrounding atmosphere and maintaining that lower temperature by continuously extracting heat — against the natural direction of heat flow — by supplying external work (electricity).<br><br>
+      <b>Principle:</b> Heat naturally flows from HOT to COLD on its own (Second Law of Thermodynamics). In refrigeration, we want the OPPOSITE — move heat from COLD space (inside fridge) to HOT surroundings (room). This does NOT happen on its own. So we supply EXTERNAL WORK (electricity to run the compressor) to force this to happen.<br><br>
+      <b>Applications:</b> Food preservation, medicines, vaccines, ice making, air conditioning, chemical processing, blood banks, server cooling.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">26</div>
+    <div class="qi"><strong>What are the 4 main parts of a refrigerator (VCR cycle)? Explain each.</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>VCR = Vapour Compression Refrigeration</b> — used in home fridge, car AC, commercial refrigerators.<br><br>
+      <b>4 main parts:</b><br><br>
+      <b>1. Compressor</b> — "The heart of the system." Takes low-pressure, low-temperature refrigerant gas → compresses it → becomes HIGH pressure, HIGH temperature gas. Powered by electric motor.<br><br>
+      <b>2. Condenser</b> — High pressure hot gas enters → rejects heat to surrounding air → becomes HIGH pressure LIQUID. (The hot coils at the back of your fridge is the condenser).<br><br>
+      <b>3. Expansion Valve</b> — High pressure liquid passes through a tiny opening → pressure drops suddenly → temperature drops dramatically → LOW pressure, LOW temperature liquid+vapour mixture.<br><br>
+      <b>4. Evaporator</b> — The cold refrigerant enters → ABSORBS heat from the food/room inside → evaporates and becomes LOW pressure gas → back to compressor. <b>THIS IS WHERE COOLING HAPPENS.</b><br><br>
+      <div class="bx">Cycle: Compressor → Condenser → Expansion Valve → Evaporator → back to Compressor</div>
+      <div class="warn">The COMPRESSOR does NOT cool. The EVAPORATOR produces the cooling effect by absorbing heat from the refrigerated space.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">27</div>
+    <div class="qi"><strong>What is a refrigerant? What properties should a good refrigerant have?</strong><em>3-mark exam question + VIVA</em><div class="tags"><span class="tag tag-r">3 marks + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Refrigerant</b> = The working fluid that circulates through the refrigeration system. It absorbs heat from the cold space (in the evaporator) and carries it to the condenser where it is rejected to the atmosphere.<br><br>
+      <b>Properties of a GOOD refrigerant:</b>
+      <ul>
+        <li>Non-toxic (safe for humans)</li>
+        <li>Non-flammable (safe near heat sources)</li>
+        <li>Non-corrosive (does not damage pipes and components)</li>
+        <li>High latent heat of vaporization (absorbs more heat per kg)</li>
+        <li>Low specific volume (smaller compressor needed)</li>
+        <li>Low boiling point (evaporates easily at low temperatures)</li>
+        <li>Cheap and easily available</li>
+        <li>Eco-friendly (does not damage ozone layer)</li>
+      </ul>
+      <b>Common refrigerants:</b> R-12 (Freon — being phased out, harms ozone), R-22 (AC use), R-134a (modern eco-friendly), NH₃ or Ammonia (industrial, high efficiency but toxic), CO₂ (marine refrigeration).
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">28</div>
+    <div class="qi"><strong>What is COP? What is refrigerating effect? What is 1 TR?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>COP (Coefficient of Performance)</b> = Measure of efficiency of a refrigeration system. Ratio of useful cooling produced to electrical work input required.
+      <div class="bx">COP = Refrigerating Effect / Work Input = Q₂ / W = Q₂ / (Q₁ - Q₂)<br>Higher COP = more efficient (cools more, uses less electricity)</div>
+      <b>Refrigerating Effect</b> = The actual amount of heat absorbed by the refrigerant from the refrigerated space (food, room) during one complete cycle. This is the cooling produced. Unit: kJ/kg or kJ/min. It happens in the EVAPORATOR.<br><br>
+      <b>1 Tonne of Refrigeration (TR)</b> = The refrigerating capacity needed to melt 1000 kg (1 tonne) of ice at 0°C in 24 hours.<br>
+      <div class="bx">1 TR = 3.5 kW = 3.5 kJ/s = 210 kJ/min</div>
+      When you see "1.5-ton AC" or "2-ton fridge" — they mean 1.5 TR and 2 TR cooling capacity.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum nb">29</div>
+    <div class="qi"><strong>What is the difference between Window AC and Split AC?</strong><em>Very likely VIVA question</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      Both Window AC and Split AC use the same <b>VCR principle</b>. The difference is only how the components are arranged physically.<br><br>
+      <b>Window AC:</b> ALL components (compressor, condenser, evaporator, expansion valve) are in ONE single unit (box). The box is mounted in a window opening — compressor side faces outside, cooling side faces inside room.<br><br>
+      <b>Split AC:</b> Components split into TWO units — an INDOOR unit (contains evaporator, air handler) and OUTDOOR unit (contains compressor, condenser). Connected by refrigerant pipes through a small hole in wall.<br><br>
+      <table>
+        <tr><th>Feature</th><th>Window AC</th><th>Split AC</th></tr>
+        <tr><td>No. of units</td><td>One unit</td><td>Two units</td></tr>
+        <tr><td>Noise</td><td>Noisy (compressor in room)</td><td>Quiet (compressor outside)</td></tr>
+        <tr><td>Aesthetics</td><td>Less attractive</td><td>More attractive</td></tr>
+        <tr><td>Cost</td><td>Lower</td><td>Higher</td></tr>
+        <tr><td>Efficiency</td><td>Lower</td><td>Higher (inverter models)</td></tr>
+        <tr><td>Installation</td><td>Simple — fits in window</td><td>Complex — drilling needed</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ════════════ CIVIL ════════════ -->
+<div id="civil" class="viva-sec">
+
+<div class="unit-label">Civil Engineering Scope and Surveying</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">30</div>
+    <div class="qi"><strong>What is Civil Engineering? What are its branches?</strong><em>Basic must-know VIVA</em></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Civil Engineering</b> = The oldest branch of engineering. Deals with the design, construction, and maintenance of physical infrastructure — buildings, roads, bridges, dams, water supply systems, airports.<br><br>
+      <b>Main branches:</b>
+      <ul>
+        <li><b>Structural Engineering</b> — design of buildings, bridges, dams to safely carry loads</li>
+        <li><b>Transportation Engineering</b> — roads, highways, railways, airports, traffic management</li>
+        <li><b>Environmental Engineering</b> — water treatment, sewage, pollution control, waste management</li>
+        <li><b>Geotechnical Engineering</b> — soil testing, foundation design, tunnels, slopes</li>
+        <li><b>Water Resources Engineering</b> — dams, irrigation canals, flood control</li>
+        <li><b>Construction Management</b> — project planning, estimating, scheduling</li>
+        <li><b>Surveying</b> — land measurement, making maps and plans</li>
+      </ul>
+      <div class="warn">Thermal Engineering is NOT a civil branch — it belongs to Mechanical Engineering.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">31</div>
+    <div class="qi"><strong>What is surveying? What is the principle of "whole to part"?</strong><em>Your friend was asked about surveying — 4-mark exam question too</em><div class="tags"><span class="tag tag-r">Very likely — friend was asked!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Surveying</b> = The science and art of measuring Earth's surface — distances, angles, elevations — to determine the relative position of points and represent them on a map or plan.<br><br>
+      <b>Objects of surveying:</b> Prepare maps; fix land boundaries; plan roads/dams/buildings; calculate areas and volumes.<br><br>
+      <b>Principle — Work from WHOLE to PART:</b><br><br>
+      <b>Problem with "Part to Whole":</b> If you measure small sections and try to join them, every small measurement has a tiny error. All those errors ADD TOGETHER (accumulate). By the time you finish, the boundary doesn't close — massive total error.<br><br>
+      <b>Solution — "Whole to Part":</b>
+      <ol>
+        <li>First measure a few widely-spaced CONTROL POINTS covering the ENTIRE area with high precision</li>
+        <li>These form the overall framework (skeleton) of the survey</li>
+        <li>Then fill in details between control points with ordinary methods</li>
+        <li>Any error in detail work stays LOCAL — does NOT spread to the whole survey</li>
+      </ol>
+      <b>Benefits:</b> Errors stay contained, multiple teams can work simultaneously, mistakes easy to find and fix, overall accuracy maintained.
+      <div class="hl">Real-life analogy: Making India's map — first mark the 4 corners accurately (whole), then add states, then districts, then cities (parts). Never the other way around.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">32</div>
+    <div class="qi"><strong>What is plane surveying vs geodetic surveying?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Plane Surveying:</b> The Earth's surface is treated as a FLAT (plane) surface. Curvature of Earth is ignored. Used for small areas — less than 250 square km. Used for most engineering projects (roads, buildings, dams).<br><br>
+      <b>Geodetic Surveying:</b> Takes the Earth's CURVED shape into account. Used for very large areas — surveying whole countries, continents. Used for national mapping, GPS systems, satellite-based measurements.
+      <div class="hl">MCQ/VIVA: Ignores Earth's curvature → Plane Surveying. Considers Earth's curvature → Geodetic Surveying.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">33</div>
+    <div class="qi"><strong>What is Invar tape? Why is it used?</strong><em>MCQ 2025 — also VIVA</em><div class="tags"><span class="tag tag-r">MCQ + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Invar Tape</b> = A measuring tape used in precise surveying. Made of an alloy of <b>36% Nickel + 64% Steel</b>.<br><br>
+      <b>Why Invar?</b> Normal steel expands when hot and contracts when cold (thermal expansion). In surveying, even 1mm error multiplied over large distances causes big mistakes. Invar alloy has extremely LOW thermal expansion — its length barely changes with temperature. So measurements are accurate in summer or winter.<br><br>
+      <b>Other tape types for comparison:</b>
+      <ul>
+        <li>Cloth/Linen tape — cheap, absorbs water, rough work only</li>
+        <li>Steel tape — general accurate surveying, rusts if not cared for</li>
+        <li>Fibre glass tape — modern, flexible, non-conductive</li>
+        <li><b>Invar tape — highest precision, least affected by temperature</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="unit-label">Building Construction</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">34</div>
+    <div class="qi"><strong>What is a foundation? What are types of foundations?</strong><em>"What is the base pillar" — your friend was asked something like this</em><div class="tags"><span class="tag tag-r">Friend was asked!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Foundation</b> = The lowest part of a building structure, constructed below ground level. Its purpose is to transfer ALL the loads of the building safely to the soil below without excessive settlement or failure.<br><br>
+      <b>Why is foundation important?</b> Without a proper foundation, the building would sink, tilt or collapse. The foundation distributes the heavy concentrated load of walls and columns over a larger area of soil.<br><br>
+      <b>Two main types:</b><br><br>
+      <b>Shallow Foundation</b> (depth ≤ width) — when hard/strong soil is close to surface:
+      <ul>
+        <li>Strip footing — long strip under load-bearing walls</li>
+        <li>Isolated footing — single square/circular pad under one column</li>
+        <li>Combined footing — supports two or more columns</li>
+        <li>Raft/Mat footing — single slab covers entire building area; used on WEAK soil</li>
+      </ul>
+      <b>Deep Foundation</b> (depth &gt; width) — when hard soil is very deep:
+      <ul>
+        <li>Pile foundation — long cylindrical columns driven deep into ground until they reach hard rock. Used for bridges, tall buildings, waterlogged soil.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">35</div>
+    <div class="qi"><strong>What is load-bearing structure vs framed structure?</strong><em>4-mark exam question — also VIVA</em><div class="tags"><span class="tag tag-r">4 marks + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Load Bearing Structure:</b> The WALLS themselves carry and transfer all loads from roof down to foundation and soil. Walls must be very thick (20–40cm) and strong. Cannot remove any wall. Maximum 2–3 storeys. Used for small homes and bungalows.<br><br>
+      Load path: Roof slab → Walls → Foundation → Soil<br><br>
+      <b>RCC Framed Structure:</b> A skeleton/frame of COLUMNS (vertical) and BEAMS (horizontal) carries all loads. Walls are just thin partitions — they carry NO structural load and can be shifted anywhere. Used for apartments, offices, multi-storey buildings.<br><br>
+      Load path: Slab → Beams → Columns → Footings → Soil<br><br>
+      <table>
+        <tr><th>Feature</th><th>Load Bearing</th><th>RCC Framed</th></tr>
+        <tr><td>Load carrier</td><td>Walls</td><td>Columns + Beams</td></tr>
+        <tr><td>Wall thickness</td><td>20–40 cm (thick)</td><td>10–15 cm (thin partition)</td></tr>
+        <tr><td>Max floors</td><td>2–3 floors</td><td>Unlimited floors</td></tr>
+        <tr><td>Can walls be moved?</td><td>NO — structural</td><td>YES — just partition</td></tr>
+        <tr><td>Used for</td><td>Small bungalows</td><td>Apartments, malls, offices</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">36</div>
+    <div class="qi"><strong>What are the types of loads on a building? Explain each.</strong><em>4-mark exam question + VIVA</em><div class="tags"><span class="tag tag-r">4 marks + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>1. Dead Load (DL)</b> = Permanent weight of the building's own parts — walls, columns, beams, slabs, permanent fixtures. Never changes. Always acts downward (gravity).<br><br>
+      <b>2. Live Load (LL)</b> = Movable, temporary loads that can change — people, furniture, equipment, vehicles. Also called "imposed load." Acts downward.<br><br>
+      <b>3. Wind Load (WL)</b> = Pressure exerted by wind on building surfaces. Acts HORIZONTALLY (sideways). Important for tall buildings. Formula: P = K × V² (V = wind speed). Can topple or overturn a building if not designed for it.<br><br>
+      <b>4. Earthquake Load (EL)</b> = Horizontal force caused by ground shaking during earthquakes. Pushes the building sideways like a pendulum. Formula: F = W × α/g. Gujarat is in Seismic Zone III — high earthquake risk.<br><br>
+      <b>5. Snow Load</b> = Weight of accumulated snow on roof. Relevant in cold regions (Kashmir, Himachal Pradesh).<br><br>
+      <div class="hl">Key rule: Dead + Live loads are VERTICAL (pull down). Wind + Earthquake loads are HORIZONTAL (push sideways). A building must resist BOTH types safely.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">37</div>
+    <div class="qi"><strong>What is a lintel? What is a chajja? What is a plinth?</strong><em>Building components — very commonly asked</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Lintel</b> = A horizontal beam (usually RCC or stone) provided ABOVE a door or window opening in a wall. Its job is to take the weight/load of the wall above the opening and transfer it to the sides. Without a lintel, the wall above the opening would collapse. Height from floor = 2.0m. Must extend 10cm on each side of opening.<br><br>
+      <b>Chajja (Sun shade / Weather shed)</b> = A horizontal slab that projects outward from the wall just above doors and windows. It protects the opening from rain (prevents water entering) and sun (reduces direct sunlight). Projection = 45–90cm.<br><br>
+      <b>Plinth</b> = The portion of the building structure between ground level and the finished floor level of the ground floor. Height = 30–90cm. Protects the building from moisture rising from ground, insects, and splashing rainwater. The DPC (Damp Proof Course) is placed at plinth level.<br><br>
+      <b>Sill</b> = Horizontal member BELOW a window opening. Supports the window frame. Height from floor = 70–90cm.<br><br>
+      <b>Parapet</b> = A low wall (1.0–1.3m high) at the edge of a roof or terrace. Prevents people from falling off. Min thickness = 10cm.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">38</div>
+    <div class="qi"><strong>What is DPC? What is its purpose?</strong></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>DPC = Damp Proof Course</b> = A horizontal layer of waterproof material placed in a wall at plinth level to prevent moisture from rising up through the walls from the ground.<br><br>
+      <b>Why needed?</b> Soil is always moist. Bricks and mortar absorb water through capillary action (like a sponge). Without DPC, moisture rises up the walls → peeling paint, crumbling plaster, unhealthy damp rooms, damaged furniture.<br><br>
+      <b>Materials used for DPC:</b> Bitumen (most common), 1:1 cement-sand mortar, waterproof concrete, lead sheets, polythene sheets.<br><br>
+      <b>Typical thickness:</b> 2.5cm to 4cm.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">39</div>
+    <div class="qi"><strong>What are the principles of planning a building? Name them all.</strong><em>4-mark likely + VIVA</em><div class="tags"><span class="tag tag-r">Very likely</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>9 Principles of Planning</b> (Mnemonic: A P P G R E C F S)<br><br>
+      <b>1. Aspect</b> — Position rooms for best sun and wind direction. Kitchen=east, bedroom=away from west, study=north.<br><br>
+      <b>2. Prospect</b> — Rooms face pleasant external views. Building looks good from outside.<br><br>
+      <b>3. Privacy</b> — Each room has privacy. Internal (door positions, buffer zones) and external (compound wall, trees). Bedrooms away from living room.<br><br>
+      <b>4. Grouping</b> — Related rooms close together. Kitchen+Dining. Bedroom+Toilet. WC away from kitchen.<br><br>
+      <b>5. Roominess</b> — Maximum feel of space with minimum area. L:W ratio = 1.2:1 to 1.5:1. Beyond 2:1 = tunnel effect.<br><br>
+      <b>6. Elegance</b> — Beautiful appearance. Good proportions, quality materials, attractive facade.<br><br>
+      <b>7. Circulation</b> — Easy movement. Corridors and passages short, straight, well-lit. Circulation:usable = 1:4 ratio.<br><br>
+      <b>8. Flexibility</b> — Rooms serve multiple purposes. Drawing room as guest bedroom.<br><br>
+      <b>9. Sanitation</b> — Health and hygiene. Window area ≥ 1/7 of floor area. Cross-ventilation. DPC against dampness. Clean drainage.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum ng">40</div>
+    <div class="qi"><strong>What is roominess? What is the ideal L:W ratio?</strong><em>MCQ 2025 + VIVA</em><div class="tags"><span class="tag tag-r">MCQ + VIVA</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Roominess</b> = Making a room feel as spacious as possible with the minimum possible floor area. It is about the psychological feeling of space, not just the actual size.<br><br>
+      <b>How to achieve roominess:</b>
+      <ul>
+        <li>Ideal Length:Width ratio = <b>1.2:1 to 1.5:1</b> (a slightly rectangular room)</li>
+        <li>If ratio exceeds 2:1 → room feels like a long corridor = <b>TUNNEL EFFECT</b> (very bad)</li>
+        <li>A perfect square room (1:1) wastes corner areas and feels boxy</li>
+        <li>Light/white colours make a room feel bigger. Dark colours make it smaller.</li>
+        <li>Built-in cupboards and shelves (instead of freestanding furniture) increase usable floor area</li>
+        <li>Correct height of ceiling — too low feels cramped, too high feels cold and distant</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ════════════ PRACTICAL VIVA ════════════ -->
+<div id="practical" class="viva-sec">
+
+<div class="unit-label">Questions they will ask about YOUR drawing in the practical exam</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">P1</div>
+    <div class="qi"><strong>If you draw a FAN — what views will they ask you to draw? What is front view of a fan?</strong><em>Your friend drew a fan! Know this.</em><div class="tags"><span class="tag tag-r">Friend drew fan!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Fan (ceiling fan) — orthographic views:</b><br><br>
+      <b>Front View (FV):</b> You would see the fan blade shape — essentially a horizontal arm/blade profile. If looking from front directly — you'd see the blade in its true shape (ellipse or blade profile) with the hub/boss at centre, connecting rod above.<br><br>
+      <b>Top View (TV):</b> Looking from directly above — you'd see the circular arrangement of all fan blades radiating out from the centre hub. Like a star/flower pattern. Shows the sweep circle diameter.<br><br>
+      <b>Side View:</b> Looking from the side — you'd see the depth/thickness of the blade, the hub, and the connecting rod going upward.<br><br>
+      <b>What they can ask in VIVA about the fan drawing:</b>
+      <ul>
+        <li>"What projection method did you use?" → First Angle Projection</li>
+        <li>"Why is top view below the front view?" → Because India uses first angle projection</li>
+        <li>"What does a hidden line in your drawing represent?" → An edge that exists but is not visible from that direction</li>
+        <li>"What is the purpose of the centre line?" → To show the axis of symmetry and centre of circular features</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">P2</div>
+    <div class="qi"><strong>If you draw a CYLINDER — isometric view. How does a circle appear in isometric?</strong><em>Your friend drew a cylinder!</em><div class="tags"><span class="tag tag-r">Friend drew cylinder!</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Isometric View of a Cylinder:</b><br><br>
+      In isometric view, a cylinder appears as a rectangular box-like shape with ELLIPSES on the top and bottom faces, and two tangent lines connecting them on the sides.<br><br>
+      <b>How a circle becomes an ellipse in isometric:</b> In isometric, the three planes are tilted. Any circle lying in an isometric plane gets "squashed" and appears as an ellipse. This is because you're viewing the circular face at an angle, not straight on.<br><br>
+      <b>How to draw the ellipse (4-centre oval method):</b>
+      <ol>
+        <li>Draw the isometric square for that face</li>
+        <li>Find the midpoint of each of the 4 sides</li>
+        <li>Draw perpendiculars at each midpoint — these intersect at 4 centres</li>
+        <li>Draw 4 arcs using these 4 centres — this approximate ellipse represents the circle</li>
+      </ol>
+      <b>VIVA questions about cylinder drawing:</b>
+      <ul>
+        <li>"Why is the circle drawn as an ellipse?" → Because in isometric projection, circular faces appear as ellipses due to the inclined viewing angle</li>
+        <li>"How many isometric axes are there?" → Three — one vertical and two at 30° to horizontal, 120° to each other</li>
+        <li>"What is the isometric scale factor?" → 0.816</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">P3</div>
+    <div class="qi"><strong>General VIVA questions about any drawing you do</strong><em>They can ask these for any drawing</em><div class="tags"><span class="tag tag-r">Very likely for any drawing</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Q: What projection method have you used?</b><br>
+      A: First Angle Projection (as per BIS/Indian standard SP:46).<br><br>
+      <b>Q: Why is the top view placed below the front view?</b><br>
+      A: In first angle projection, the object is between the observer and the projection plane. The top view "shadow" falls on the horizontal plane which unfolds downward, so it appears below the front view.<br><br>
+      <b>Q: What do the different types of lines in your drawing mean?</b><br>
+      A: Thick continuous lines = visible edges. Dashed lines = hidden/invisible edges. Chain lines (long-short) = centre lines showing axis of symmetry. Thin lines with arrows = dimension lines.<br><br>
+      <b>Q: What is a hidden line and why do we use it?</b><br>
+      A: A hidden line (shown as dashed) represents an edge or feature that exists in the object but is not visible from the viewing direction in that particular view. It helps complete the description without needing an extra view.<br><br>
+      <b>Q: What are the three views in orthographic projection?</b><br>
+      A: Front View (FV) on VP, Top View (TV) on HP, Side View (SV) on PP.<br><br>
+      <b>Q: What is a cutting plane? What is hatching?</b><br>
+      A: Cutting plane is the imaginary plane that cuts through the object in a sectional view. Hatching (section lines) are thin parallel lines at 45° that fill the cut surface to show the material has been cut.<br><br>
+      <b>Q: What scale did you use?</b><br>
+      A: [Say whatever scale you used, e.g.] "I used a 1:1 (full size) scale" or "I used a 1:2 reducing scale." Then: Scale means the ratio of drawing size to actual size.<br><br>
+      <b>Q: What is the difference between isometric view and orthographic view?</b><br>
+      A: Orthographic projection shows multiple 2D views (front, top, side) separately — each shows true shape and size of one face. Isometric view shows all three dimensions in ONE pictorial view — it gives a 3D appearance but does not show true dimensions of inclined surfaces.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">P4</div>
+    <div class="qi"><strong>Tricky VIVA questions professors love to ask</strong><em>Be prepared for these surprises</em><div class="tags"><span class="tag tag-a">Tricky</span></div></div>
+    <div class="arrow">▾</div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <b>Q: What is the difference between a plan and a map?</b><br>
+      A: A plan shows a SMALL area at LARGE scale (like a building floor plan — 1:100). A map shows a LARGE area at SMALL scale (like a country map — 1:50000). Plans have very detailed information, maps show general features.<br><br>
+      <b>Q: Why do we not show hidden lines in isometric views?</b><br>
+      A: Isometric is a PICTORIAL view — it's meant to look like a 3D photograph of the object. Hidden lines make it cluttered and hard to read without adding useful information. They are omitted unless specifically needed to show a critical feature.<br><br>
+      <b>Q: What happens when you heat steam beyond dry saturated — what do you call it?</b><br>
+      A: It becomes SUPERHEATED STEAM. The temperature rises above the saturation temperature, steam starts behaving like a perfect gas (obeys Boyle's and Charles's laws), and it has more energy. It is preferred in steam turbines.<br><br>
+      <b>Q: Why does a CI engine have higher compression ratio than SI engine?</b><br>
+      A: In CI (diesel) engine, there is no spark plug. The diesel is ignited by the HEAT of compressed air. Air must reach about 600°C — which requires very high compression (14–22:1). In SI (petrol) engine, a spark plug ignites the mixture, so high compression is not needed. Also, petrol would pre-ignite (knock) at high compression.<br><br>
+      <b>Q: What is eccentricity? For which curve is it equal to 1?</b><br>
+      A: Eccentricity (e) = ratio of distance from focus to distance from directrix. It defines the shape of conic sections. e=0 (circle), 0&lt;e&lt;1 (ellipse), <b>e=1 (PARABOLA)</b>, e&gt;1 (hyperbola).<br><br>
+      <b>Q: What is the involute of a circle used for?</b><br>
+      A: Gear teeth profiles. The involute curve ensures that gear teeth mesh smoothly with constant velocity ratio, low friction, and can work even with small variations in centre distance. Almost all modern gears use involute tooth profiles.<br><br>
+      <b>Q: If the cutting plane is inclined to HP, is apparent section equal to true section?</b><br>
+      A: NO. When the cutting plane is INCLINED to HP, the apparent section (AS) is LESS than the true section (TS). The section appears compressed/distorted. To find the true section, you need to project onto an Auxiliary Inclined Plane (AIP) that is parallel to the cutting plane.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="cnum np">P5</div>
+    <div class="arrow">▾</div>
+    <div class="qi"><strong>Quick 1-line answers for rapid-fire VIVA</strong><em>Professor asks fast — answer in one sentence</em><div class="tags"><span class="tag tag-r">Last minute prep</span></div></div>
+  </div>
+  <div class="card-body">
+    <div class="body">
+      <div class="bx">
+        <b>What is TDC?</b> → Highest position of the piston in the cylinder.<br>
+        <b>What is BDC?</b> → Lowest position of the piston in the cylinder.<br>
+        <b>What is stroke?</b> → Distance piston travels from TDC to BDC (one-way).<br>
+        <b>What is bore?</b> → Internal diameter of the cylinder.<br>
+        <b>What is compression ratio?</b> → (Swept volume + Clearance volume) / Clearance volume.<br>
+        <b>Where does cooling happen in a fridge?</b> → In the EVAPORATOR.<br>
+        <b>Where does heat rejection happen in a fridge?</b> → In the CONDENSER.<br>
+        <b>What compresses the refrigerant?</b> → The COMPRESSOR.<br>
+        <b>What is 1 TR?</b> → 3.5 kW — cooling capacity to melt 1000kg ice in 24 hours.<br>
+        <b>What is dryness fraction x=1?</b> → Dry saturated steam — all steam, no water droplets.<br>
+        <b>What is dryness fraction x=0?</b> → Saturated water — no steam at all.<br>
+        <b>What is a lintel?</b> → RCC beam above door/window to carry wall load above opening.<br>
+        <b>What is DPC?</b> → Damp Proof Course — waterproof layer at plinth to stop rising moisture.<br>
+        <b>What is a plinth?</b> → Portion between ground level and floor level — protects from moisture.<br>
+        <b>What is parapet?</b> → Low wall (1–1.3m) at roof edge to prevent falling.<br>
+        <b>What is chajja?</b> → Projecting slab above door/window to protect from rain and sun.<br>
+        <b>Invar tape made of?</b> → 36% Nickel + 64% Steel alloy.<br>
+        <b>India uses which angle projection?</b> → FIRST ANGLE projection.<br>
+        <b>USA uses which angle projection?</b> → THIRD ANGLE projection.<br>
+        <b>Isometric axes are at how many degrees?</b> → 120° to each other (one vertical, two at 30°).<br>
+        <b>Eccentricity of parabola?</b> → e = 1 exactly.<br>
+        <b>What does a cycloid represent?</b> → Path of a point on a rolling circle on a straight line.<br>
+        <b>What does an involute represent?</b> → Path of thread end being unwound from a circle/polygon.<br>
+        <b>What is hatching angle?</b> → 45° thin equally spaced lines.<br>
+        <b>Roominess L:W ratio?</b> → 1.2:1 to 1.5:1 (ideal).<br>
+        <b>Tunnel effect in planning?</b> → When L:W ratio exceeds 2:1 — room feels like a corridor.<br>
+        <b>Window area rule?</b> → Minimum 1/7th of floor area (hot-humid climate).<br>
+        <b>What is Cochran boiler?</b> → Vertical, multi-tube, fire-tube, internally fired, natural circulation boiler.<br>
+        <b>What is SP:46?</b> → Indian standard code for engineering drawing practice.<br>
+        <b>Superheated steam property?</b> → Temperature above saturation temperature; behaves like perfect gas.<br>
+        <b>Whole to part principle?</b> → Establish overall framework first, then fill in details — prevents error accumulation.
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
 </div><!-- end .content -->
 
 <script>
@@ -1309,6 +2468,64 @@ document.querySelectorAll('.section').forEach(sec => {
     }
   }
 });
+
+function switchVivaTab(id) {
+  document.querySelectorAll('.viva-sec').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.viva-btn').forEach(t => t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.currentTarget.classList.add('on');
+  
+  // Clear search bar when switching tabs
+  const searchInput = document.getElementById('viva-search');
+  if (searchInput) {
+    searchInput.value = '';
+    // Show all cards in newly opened category
+    const cards = document.querySelectorAll('#viva .card');
+    cards.forEach(card => card.style.display = 'block');
+  }
+}
+
+function searchViva() {
+  const query = document.getElementById('viva-search').value.toLowerCase();
+  const cards = document.querySelectorAll('#viva .card');
+  const sections = document.querySelectorAll('#viva .viva-sec');
+  
+  if (query.trim() === '') {
+    // Restore the active category sub-tab
+    const activeSubTab = document.querySelector('.viva-btn.on');
+    if (activeSubTab) {
+      const onclickAttr = activeSubTab.getAttribute('onclick');
+      const categoryId = onclickAttr.match(/'([^']+)'/)[1];
+      
+      sections.forEach(s => {
+        if (s.id === categoryId) {
+          s.classList.add('on');
+        } else {
+          s.classList.remove('on');
+        }
+      });
+    }
+    
+    // Show all cards inside the active section
+    cards.forEach(card => {
+      card.style.display = 'block';
+    });
+    return;
+  }
+  
+  // Show all sections so matching cards inside them can be seen
+  sections.forEach(s => s.classList.add('on'));
+  
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(query)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
 </script>
 
 
